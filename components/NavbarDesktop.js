@@ -6,7 +6,6 @@ const NavbarDesktop = () => {
   const menuItems = [
     { name: "Quem Somos", link: "/quemsomos" },
     { name: "Nossos Serviços", link: "/servicos" },
-    { name: "Dicas", link: "/blog" },
     { name: "Contato", link: "/contato" },
   ];
 

@@ -308,7 +308,13 @@ export default function Home() {
       </div>
 
       {/* 1st container*/}
-      <div className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 md:p-12 lg:p-16 my-3 md:my-4 lg:my-2 bg-[#23c5ed]">
+      <div
+        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 md:p-12 lg:p-16 my-3 md:my-4 lg:my-2"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
+        }}
+      >
         {/* Coluna Esquerda - Texto + Logos */}
         <div className="flex flex-col lg:w-[45%] justify-center">
           <p className="text-white pb-2 leading-relaxed lg:text-4xl md:text-3xl text-2xl font-bold text-center md:text-center lg:text-left">
@@ -339,7 +345,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <Link
               href="/quemsomos"
-              className="flex hover:bg-gray-300 rounded-full p-2 text-bold mt-6 text-white gap-1 hover:underline"
+              className="flex hover:bg-white hover:text-[#23c5ed] rounded-full p-2 text-bold mt-6 text-white gap-1 hover:underline transition-colors duration-300"
             >
               Veja mais
               <svg
@@ -459,54 +465,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Flexbox2 - Dicas*/}
-      <div
-        className="dicas flex flex-col bg-cover"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
-          backgroundColor: "rgba(35, 197, 237, 0.1)",
-          backgroundBlendMode: "overlay",
-        }}
-      >
-        {/* Container principal respeitando os limites da imagem */}
-        <div className="flex flex-col lg:w-[60%] lg:h-full lg:pt-4 lg:p-10 backdrop-blur-lg gap-1 md:gap-2 lg:gap-2 py-2 md:py-4 lg:py-8">
-          {/* Título */}
-          <h2 className="text-white lg:text-4xl md:text-3xl text-3xl font-bold lg:text-left md:text-center text-center ">
-            Dicas
-          </h2>
-          <p className=" text-lg text-white font-bold text-center md:text-center lg:text-left">
-            Tudo o que você precisa saber para cuidar das suas peças
-          </p>
-
-          {/* Embla Carousel */}
-
-          <Carousel />
-
-          <div className="flex flex-col items-center">
-            <Link
-              href="/blog"
-              className="flex hover:bg-white hover:text-[#23c5ed] rounded-full p-2 text-bold  text-white gap-1  hover:underline transition-colors duration-300"
-            >
-              Veja mais
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
+      
+        
+     
 
       {/* Venha nos visitar */}
       <div

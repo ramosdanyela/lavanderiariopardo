@@ -8,7 +8,6 @@ const NavbarMobile = () => {
   const menuItems = [
     { name: "Quem Somos", link: "/quemsomos" },
     { name: "Marcas & Produtos", link: "/marcaseprodutos" },
-    { name: "Dicas da Portal", link: "/blog" },
     { name: "Contato", link: "/contato" },
   ];
 

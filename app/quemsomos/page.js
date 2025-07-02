@@ -55,7 +55,7 @@ export default function QuemSomos() {
     <div className="flex flex-col bg-[#f9fcfd]">
       <div
         ref={flexboxRef1}
-        className="container-hero flex flex-col md:flex-row pt-[6rem] lg:pt-[8rem] lg:flex-row"
+        className="container-hero flex flex-col md:flex-row pt-[8rem] lg:pt-[10rem] lg:flex-row"
       >
         {/* Coluna da Esquerda - Descrição */}
         <div className="flex flex-col px-6  md:px-8  w-full  lg:w-[55%]">
@@ -69,22 +69,26 @@ export default function QuemSomos() {
             A Lavanderia Rio Pardo tem 4 anos de existência no mercado,
             oferecendo um serviço de qualidade a preços econômicos. Estamos aqui
             para facilitar e otimizar o tempo de nossos clientes no cuidado de
-            suas peças. Temos como objetivo de representar a simplicidade
-            realçando a essência da marca, além de transmitir segurança,
-            proteção e sobretudo a humanização da marca. Nesses 3 anos
-            alcançamos um grande público, um principal deles são as empresas
-            instaladas na nossa cidade para a Obra Projeto Cerrado da Suzano,
-            empresas que vem sendo clientes fiés em nossa jornada.
+            suas peças.
           </p>
-        
+          <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
+            Temos como objetivo de representar a simplicidade realçando a
+            essência da marca, além de transmitir segurança, proteção e
+            sobretudo a humanização da marca.
+          </p>
+          <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
+            Nesses 3 anos alcançamos um grande público, um principal deles são
+            as empresas instaladas na nossa cidade para a Obra Projeto Cerrado
+            da Suzano, empresas que vem sendo clientes fiés em nossa jornada.
+          </p>
         </div>
 
         {/* Coluna Direita - Imagem */}
-        <div className="flex px-6 h-full lg:px-8 lg:w-[45%]">
+        <div className="flex px-6 h-[500px] lg:px-8 lg:w-[45%]">
           <img
             alt="Product screenshot"
             src="/bg/bg1.png"
-            className="w-full h-full object-contain transform -scale-x-100 rounded-2xl shadow-2xl"
+            className="w-full h-full object-cover object-top transform -scale-x-100 rounded-2xl shadow-2xl"
           />
         </div>
       </div>
@@ -102,8 +106,6 @@ export default function QuemSomos() {
           />
         </div>
 
-        
-
         <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8">
           <p className="flex mt-2 lg:mt-0 text-center md:text-center lg:text-left text-pretty text-2xl md:text-3xl lg:text-4xl leading-tight font-bold text-gray-900 gap-3">
             <StarIcon className="inline-block w-8 h-8 text-[#23c5ed]" />
@@ -119,8 +121,6 @@ export default function QuemSomos() {
           </div>
         </div>
       </div>
-
-
 
       {/* Seção 2: Equipe especializada */}
       <div
