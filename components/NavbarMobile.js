@@ -7,7 +7,7 @@ const NavbarMobile = () => {
   // Lista de itens do menu
   const menuItems = [
     { name: "Quem Somos", link: "/quemsomos" },
-    { name: "Marcas & Produtos", link: "/marcaseprodutos" },
+    { name: "Nossos Serviços", link: "/nossoservicos" },
     { name: "Contato", link: "/contato" },
   ];
 

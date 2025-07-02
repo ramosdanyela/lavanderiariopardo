@@ -33,6 +33,7 @@ export default function Home() {
   const flexboxRef4 = useRef(null);
   const flexboxRef5 = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [expandedFeature, setExpandedFeature] = useState(null);
 
   useEffect(() => {
     const animateSection = (ref) => {
@@ -84,28 +85,16 @@ export default function Home() {
       icon: UserGroupIcon,
     },
     {
-      name: "Coleta e entrega de materiais em sua empresa ou casa",
+      name: "Coleta e entrega em sua empresa",
       description:
         "Contamos com frota dedicada e equipe treinada para coletar e entregar seus materiais com segurança e pontualidade, seja na sua empresa ou na sua casa.",
       icon: FaTruck,
-    },
-    {
-      name: "Marcas de Confiança",
-      description:
-        " Trabalhamos com fabricantes renomados, reconhecidos nacional einternacionalmente, para garantir a qualidade dos nossos serviços.",
-      icon: FaHandshake,
     },
     {
       name: "Produtos de Alta Performance",
       description:
         " Utilizamos apenas produtos de alta performance, cuidadosamente selecionados para resultados superiores e preservação das suas peças.",
       icon: FaStar,
-    },
-    {
-      name: "Soluções Inovadoras",
-      description:
-        "Nossas parcerias nos permitem oferecer soluções inovadoras, eficientes e seguras para todos os tipos de peças e necessidades.",
-      icon: FaLightbulb,
     },
     {
       name: "Segurança e Preservação",
@@ -141,7 +130,11 @@ export default function Home() {
               </span>
             </div>
             <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <img
+                src="/equipe/car.png"
+                alt="Carro de entrega"
+                className="w-8 h-8 mr-2 rounded-full object-cover"
+              />
               <span className="text-gray-700 font-medium">Entrega pontual</span>
             </div>
           </div>
@@ -149,12 +142,13 @@ export default function Home() {
       ),
       image: (
         <div className="text-center text-white">
-          <FaTruck className="w-20 h-20 mx-auto mb-4 opacity-80" />
-          <p className="text-lg font-semibold">Veículo de Coleta</p>
-          <p className="text-sm opacity-90">Frota dedicada e equipe treinada</p>
+          <img
+            src="/bg/car.png"
+            alt="Carro de entrega"
+            className="w-full h-full bg-contain rounded-xl"
+          />
         </div>
       ),
-      bg: "from-[#23c5ed] to-[#1ba3c2]",
     },
     {
       icon: <FaShirt className="w-12 h-12 text-white" />,
@@ -186,9 +180,11 @@ export default function Home() {
       ),
       image: (
         <div className="text-center text-white">
-          <FaShirt className="w-20 h-20 mx-auto mb-4 opacity-80" />
-          <p className="text-lg font-semibold">Roupas e Enxoval</p>
-          <p className="text-sm opacity-90">Cuidado para cada tipo de peça</p>
+          <img
+            src="/bg/cama-mesa.jpg"
+            alt="Cesta de roupas coloridas"
+            className="w-full h-full bg-contain rounded-xl"
+          />
         </div>
       ),
       bg: "from-[#23c5ed] to-[#1ba3c2]",
@@ -278,7 +274,9 @@ export default function Home() {
             diferença.
           </p>
           <a
-            href="#orcamento"
+            href="https://wa.me/5567999242050"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 px-8 py-3 lg:mt-22 lg:mb-24 bg-[#23c5ed] text-white text-xl font-bold rounded-lg shadow-lg hover:bg-[#1ba3c2] transition"
           >
             Solicitar Orçamento
@@ -287,22 +285,42 @@ export default function Home() {
       </div>
 
       {/* Features Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-2 mx-6 bg-white rounded-xl">
-        {features.map((feature) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mx-6 bg-white rounded-xl">
+        {features.map((feature, idx) => (
           <div
             key={feature.name}
-            className="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-gray-50 cursor-pointer group"
+            className={
+              `flex flex-col items-center justify-center rounded-xl transition-all duration-300 cursor-pointer group ` +
+              `bg-gray-50 hover:scale-105 hover:shadow-lg ` +
+              `p-2 sm:p-3 md:p-6 ` +
+              (expandedFeature === idx ? "z-10 shadow-2xl" : "")
+            }
+            onClick={() => {
+              if (window.innerWidth < 768)
+                setExpandedFeature(expandedFeature === idx ? null : idx);
+            }}
           >
-            <div className="mb-2 transform transition-transform duration-300 group-hover:scale-110">
+            <div className="mb-1 sm:mb-2 transform transition-transform duration-300 group-hover:scale-110">
               <feature.icon
                 aria-hidden="true"
-                className="w-16 h-16 text-[#23c5ed]"
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-[#23c5ed]"
               />
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 text-center mb-2">
+            <h3 className="text-sm sm:text-base md:text-xl font-semibold text-gray-800 text-center mb-1 sm:mb-2">
               {feature.name}
             </h3>
-            <p className="text-gray-600 text-center">{feature.description}</p>
+            {/* Mobile: mostra descrição só se expandido. Desktop: sempre mostra */}
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out w-full ${
+                expandedFeature === idx
+                  ? "max-h-40 opacity-100 mt-2"
+                  : "max-h-0 opacity-0"
+              } md:max-h-full md:opacity-100 md:mt-0`}
+            >
+              <p className="text-xs sm:text-sm text-gray-600 text-center md:block">
+                {feature.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>
@@ -413,11 +431,37 @@ export default function Home() {
                       </div>
                     </div>
                     {/* Lado direito - Imagem */}
-                    <div
-                      className={`w-full lg:w-80 h-64 lg:h-80 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center shadow-lg`}
-                    >
-                      {card.image}
-                    </div>
+                    {card.title === "Retirada do Material" ? (
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
+                        <img
+                          src="/equipe/carro.jpeg"
+                          alt="Carro de entrega"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    ) : card.title === "Peças que Lavamos" ? (
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
+                        <img
+                          src="/bg/cama-mesa.jpg"
+                          alt="Peças que Lavamos"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    ) : card.title === "EPI e Higienização" ? (
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
+                        <img
+                          src="/bg/epis.png"
+                          alt="EPI e Higienização"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className={`w-full lg:w-80 h-64 lg:h-80 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center shadow-lg`}
+                      >
+                        {card.image}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -464,10 +508,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
-      
-        
-     
 
       {/* Venha nos visitar */}
       <div
