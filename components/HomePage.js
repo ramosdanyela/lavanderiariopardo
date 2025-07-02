@@ -4,7 +4,7 @@ import {
   PaintBrushIcon,
   StarIcon,
 } from "@heroicons/react/20/solid";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Carousel } from "@/components/Carousel";
@@ -16,7 +16,13 @@ import {
   FaLightbulb,
   FaShield,
   FaCircleCheck,
+  FaShirt,
+  FaSocks,
+  FaBed,
 } from "react-icons/fa6";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +32,7 @@ export default function Home() {
   const flexboxRef3 = useRef(null);
   const flexboxRef4 = useRef(null);
   const flexboxRef5 = useRef(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     const animateSection = (ref) => {
@@ -86,7 +93,7 @@ export default function Home() {
       name: "Marcas de Confiança",
       description:
         " Trabalhamos com fabricantes renomados, reconhecidos nacional einternacionalmente, para garantir a qualidade dos nossos serviços.",
-      icon: FaTruck,
+      icon: FaHandshake,
     },
     {
       name: "Produtos de Alta Performance",
@@ -105,16 +112,148 @@ export default function Home() {
       description:
         "Priorizamos a segurança e a preservação das suas peças, com fornecedores avaliados constantemente para manter o padrão de excelência.",
       icon: FaShield,
-    },  
+    },
     {
       name: "Compromisso com a Qualidade",
       description:
         "Conte com a nossa experiência e com a força das melhores marcas do setor para garantir tranquilidade, segurança e qualidade em cada serviço prestado.",
       icon: FaHandshake,
-    },  
+    },
   ];
 
   const phoneNumber = "5567999242050";
+
+  // Serviços para o carrossel
+  const serviceCards = [
+    {
+      icon: <FaTruck className="w-12 h-12 text-white" />,
+      title: "Retirada do Material",
+      description: (
+        <>
+          Realizamos a retirada e entrega do material conforme sua necessidade,
+          em horários e prazos pré-determinados. Fornecemos tickets com
+          descrição detalhada e contagem prévia das peças.
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Coleta na sua empresa
+              </span>
+            </div>
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">Entrega pontual</span>
+            </div>
+          </div>
+        </>
+      ),
+      image: (
+        <div className="text-center text-white">
+          <FaTruck className="w-20 h-20 mx-auto mb-4 opacity-80" />
+          <p className="text-lg font-semibold">Veículo de Coleta</p>
+          <p className="text-sm opacity-90">Frota dedicada e equipe treinada</p>
+        </div>
+      ),
+      bg: "from-[#23c5ed] to-[#1ba3c2]",
+    },
+    {
+      icon: <FaShirt className="w-12 h-12 text-white" />,
+      title: "Peças que Lavamos",
+      description: (
+        <>
+          Lavamos diversos tipos de peças, desde roupas do dia a dia até itens
+          de cama, mesa e banho, sempre com cuidado e produtos de alta
+          performance.
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+            <div className="flex items-center">
+              <FaSocks className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Meias e Roupas Íntimas</span>
+            </div>
+            <div className="flex items-center">
+              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Toalhas de Banho e Rosto</span>
+            </div>
+            <div className="flex items-center">
+              <FaBed className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Lençóis e Fronhas</span>
+            </div>
+            <div className="flex items-center">
+              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Camisas e Camisetas</span>
+            </div>
+          </div>
+        </>
+      ),
+      image: (
+        <div className="text-center text-white">
+          <FaShirt className="w-20 h-20 mx-auto mb-4 opacity-80" />
+          <p className="text-lg font-semibold">Roupas e Enxoval</p>
+          <p className="text-sm opacity-90">Cuidado para cada tipo de peça</p>
+        </div>
+      ),
+      bg: "from-[#23c5ed] to-[#1ba3c2]",
+    },
+    {
+      icon: <FaShield className="w-12 h-12 text-white" />,
+      title: "EPI e Higienização",
+      description: (
+        <>
+          Realizamos a lavagem e higienização de Roupas de Proteção EPI em
+          geral, utilizando produtos profissionais e de alta performance para
+          manter a originalidade das suas peças.
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Higienização Profissional
+              </span>
+            </div>
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Preservação do EPI
+              </span>
+            </div>
+          </div>
+        </>
+      ),
+      image: (
+        <div className="text-center text-white">
+          <FaShield className="w-20 h-20 mx-auto mb-4 opacity-80" />
+          <p className="text-lg font-semibold">Equipamentos de Proteção</p>
+          <p className="text-sm opacity-90">
+            Segurança e cuidado especializado
+          </p>
+        </div>
+      ),
+      bg: "from-[#23c5ed] to-[#1ba3c2]",
+    },
+  ];
+
+  // Embla Carousel setup
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center" },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
+
+  // Função para atualizar o índice selecionado
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  // Função para navegar para um slide específico
+  const scrollTo = useCallback(
+    (index) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => emblaApi.off("select", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
     <div className="flexbox-master flex flex-col w-full bg-[#ffff]">
@@ -148,7 +287,7 @@ export default function Home() {
       </div>
 
       {/* Features Container */}
-      <div className="flex flex-col md:flex-row justify-evenly items-center gap-8 p-2   mx-6 bg-white rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-2 mx-6 bg-white rounded-xl">
         {features.map((feature) => (
           <div
             key={feature.name}
@@ -169,9 +308,9 @@ export default function Home() {
       </div>
 
       {/* 1st container*/}
-      <div className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-4 my-3 md:my-4 lg:my-2 mx-6 md:mx-8 lg:mx-8 bg-[#23c5ed] rounded-xl">
+      <div className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 md:p-12 lg:p-16 my-3 md:my-4 lg:my-2 bg-[#23c5ed]">
         {/* Coluna Esquerda - Texto + Logos */}
-        <div className="flex flex-col lg:w-[45%]">
+        <div className="flex flex-col lg:w-[45%] justify-center">
           <p className="text-white pb-2 leading-relaxed lg:text-4xl md:text-3xl text-2xl font-bold text-center md:text-center lg:text-left">
             O melhor cuidado para suas peças
           </p>
@@ -234,116 +373,89 @@ export default function Home() {
       {/* Flexbox2 - Nossos serviços */}
       <div
         ref={flexboxRef3}
-        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 bg-white"
+        className="flex flex-col gap-8 p-8 bg-white w-full mx-6 md:mx-8 lg:mx-8 rounded-xl"
       >
-        {/* Coluna Esquerda - Texto + Logos */}
-        <div className="flex flex-col lg:w-[45%]">
-          <p className="text-gray-800 lg:text-4xl md:text-3xl text-3xl font-bold text-center md:text-center lg:text-left">
+        {/* Título */}
+        <div className="text-center">
+          <h2 className="text-gray-800 lg:text-4xl md:text-3xl text-3xl font-bold">
             Nossos Serviços
+          </h2>
+          <p className="text-lg text-gray-600 mt-2">
+            Qualidade e profissionalismo em cada peça
           </p>
+        </div>
 
-          <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800">
-            <div key="marcas" className="flex items-start gap-4">
-              <FaHandshake className="w-8 h-8 text-gray-600 mt-1" />
-              <div>
-                <div className="font-bold text-lg text-gray-600">
-                  Marcas de Confiança
+        {/* Carrossel de Serviços */}
+        <div className="relative w-full">
+          <div className="embla overflow-hidden rounded-3xl" ref={emblaRef}>
+            <div className="embla__container flex">
+              {serviceCards.map((card, idx) => (
+                <div key={idx} className="embla__slide flex-[0_0_100%] px-2">
+                  <div className="bg-gradient-to-br rounded-3xl shadow-xl p-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 min-h-[400px] from-white to-gray-50">
+                    {/* Lado esquerdo - Conteúdo */}
+                    <div className="flex-1 text-center lg:text-left">
+                      <div className="flex items-center justify-center lg:justify-start mb-6">
+                        <div className="bg-[#23c5ed] p-4 rounded-2xl shadow-lg">
+                          {card.icon}
+                        </div>
+                        <h3 className="ml-4 text-2xl lg:text-3xl font-bold text-gray-900">
+                          {card.title}
+                        </h3>
+                      </div>
+                      <div className="text-gray-600 text-lg leading-relaxed mb-6">
+                        {card.description}
+                      </div>
+                    </div>
+                    {/* Lado direito - Imagem */}
+                    <div
+                      className={`w-full lg:w-80 h-64 lg:h-80 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center shadow-lg`}
+                    >
+                      {card.image}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-gray-600">
-                  Trabalhamos com fabricantes renomados, reconhecidos nacional e
-                  internacionalmente, para garantir a qualidade dos nossos
-                  serviços.
-                </div>
-              </div>
-            </div>
-            <div key="produtos" className="flex items-start gap-4">
-              <FaStar className="w-8 h-8 text-gray-600 mt-1" />
-              <div>
-                <div className="font-bold text-lg text-gray-600">
-                  Produtos de Alta Performance
-                </div>
-                <div className="text-gray-600">
-                  Utilizamos apenas produtos de alta performance, cuidadosamente
-                  selecionados para resultados superiores e preservação das suas
-                  peças.
-                </div>
-              </div>
-            </div>
-            <div key="solucoes" className="flex items-start gap-4">
-              <FaLightbulb className="w-8 h-8 text-gray-600 mt-1" />
-              <div>
-                <div className="font-bold text-lg text-gray-600">
-                  Soluções Inovadoras
-                </div>
-                <div className="text-gray-600">
-                  Nossas parcerias nos permitem oferecer soluções inovadoras,
-                  eficientes e seguras para todos os tipos de peças e
-                  necessidades.
-                </div>
-              </div>
-            </div>
-            <div key="seguranca" className="flex items-start gap-4">
-              <FaShield className="w-8 h-8 text-gray-600 mt-1" />
-              <div>
-                <div className="font-bold text-lg text-gray-600">
-                  Segurança e Preservação
-                </div>
-                <div className="text-gray-600">
-                  Priorizamos a segurança e a preservação das suas peças, com
-                  fornecedores avaliados constantemente para manter o padrão de
-                  excelência.
-                </div>
-              </div>
-            </div>
-            <div
-              key="compromisso"
-              className="flex items-start gap-4 md:col-span-2"
-            >
-              <FaCircleCheck className="w-8 h-8 text-gray-600 mt-1" />
-              <div>
-                <div className="font-bold text-lg text-gray-600">
-                  Compromisso com a Qualidade
-                </div>
-                <div className="text-gray-600">
-                  Conte com a nossa experiência e com a força das melhores
-                  marcas do setor para garantir tranquilidade, segurança e
-                  qualidade em cada serviço prestado.
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <Link
-              href="/servicos"
-              className="flex hover:bg-gray-300 rounded-full p-1 text-bold mt-2 lg:mt-6 text-white gap-1 hover:underline"
-            >
-              Veja mais
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
+          {/* Indicadores de navegação */}
+          <div className="flex justify-center mt-6 space-x-3">
+            {serviceCards.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === selectedIndex
+                    ? "bg-[#23c5ed] scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                onClick={() => scrollTo(index)}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Coluna Direita - Imagem do Rolo de Pintura preenchendo altura */}
-        <div className="hidden lg:relative md:hidden lg:items-end lg:block lg:w-[55%]">
-          <img
-            src="bg/hero.png"
-            alt="Rolo de Pintura"
-            className="w-full lg:flex lg:absolute h-full object-cover lg:inset-0 rounded-full"
-          />
+        <div className="flex flex-col items-center">
+          <Link
+            href="/servicos"
+            className="flex hover:bg-gray-300 rounded-full p-1 text-bold mt-2 lg:mt-6 text-[#23c5ed] gap-1 hover:underline"
+          >
+            Veja mais
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
 
@@ -351,9 +463,10 @@ export default function Home() {
       <div
         className="dicas flex flex-col bg-cover"
         style={{
-          backgroundImage: "url('bg/hero.png')",
-          backgroundColor: "rgba(255, 255, 255, 0.1)", // Branco com 90% de opacidade
-          backgroundBlendMode: "overlay", // Mistura a cor branca com a imagem
+          backgroundImage:
+            "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
+          backgroundColor: "rgba(35, 197, 237, 0.1)",
+          backgroundBlendMode: "overlay",
         }}
       >
         {/* Container principal respeitando os limites da imagem */}
@@ -373,7 +486,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <Link
               href="/blog"
-              className="flex hover:bg-gray-600 hover:text-gray-200 rounded-full p-2 text-bold  text-[#f9fcfd] gap-1  hover:underline"
+              className="flex hover:bg-white hover:text-[#23c5ed] rounded-full p-2 text-bold  text-white gap-1  hover:underline transition-colors duration-300"
             >
               Veja mais
               <svg
