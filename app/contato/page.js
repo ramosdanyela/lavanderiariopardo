@@ -108,7 +108,7 @@ export default function Contato() {
                         alt="WhatsApp"
                         className="w-5 h-5"
                       />
-                      <span>(67) 9924-2050</span>
+                      <span>(67) 99924-2050</span>
                     </dd>
                   </div>
                 </dl>
@@ -160,8 +160,14 @@ export default function Contato() {
                   Maps
                 </h3>
                 <address className="mt-3 space-y-1 text-sm/6 not-italic text-gray-600">
-                  <p>Rua Projetada Quadra 01 Lote 07 - Núcleo Industrial</p>
-                  <div>
+                  <p>
+                    Rua Projetada, Quadra 01
+                    <br />
+                    Lote 07 - Núcleo Industrial
+                    <br />
+                    Ribas do Rio Pardo - MS
+                  </p>
+                  <div className="mt-2">
                     <GoogleMap />
                   </div>
                 </address>

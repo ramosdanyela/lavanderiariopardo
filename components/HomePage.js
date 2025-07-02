@@ -19,6 +19,7 @@ import {
   FaShirt,
   FaSocks,
   FaBed,
+  FaClock,
 } from "react-icons/fa6";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -130,11 +131,7 @@ export default function Home() {
               </span>
             </div>
             <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <img
-                src="/equipe/car.png"
-                alt="Carro de entrega"
-                className="w-8 h-8 mr-2 rounded-full object-cover"
-              />
+              <FaClock className="text-[#23c5ed] w-5 h-5 mr-2" />
               <span className="text-gray-700 font-medium">Entrega pontual</span>
             </div>
           </div>
@@ -255,7 +252,7 @@ export default function Home() {
     <div className="flexbox-master flex flex-col w-full bg-[#ffff]">
       {/* Hero card */}
       <div
-        className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-20 pb-24 md:py-16 lg:pt-40"
+        className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-10 pb-12 md:py-8 lg:pt-20"
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           backgroundBlendMode: "overlay",
@@ -277,7 +274,7 @@ export default function Home() {
             href="https://wa.me/5567999242050"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 px-8 py-3 lg:mt-22 lg:mb-24 bg-[#23c5ed] text-white text-xl font-bold rounded-lg shadow-lg hover:bg-[#1ba3c2] transition"
+            className="mt-6 px-6 py-2 lg:mt-12 lg:mb-12 bg-[#23c5ed] text-white text-xl font-bold rounded-lg shadow-lg hover:bg-[#1ba3c2] transition"
           >
             Solicitar Orçamento
           </a>
@@ -285,7 +282,7 @@ export default function Home() {
       </div>
 
       {/* Features Container */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mx-6 bg-white rounded-xl">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-white rounded-xl">
         {features.map((feature, idx) => (
           <div
             key={feature.name}
@@ -512,13 +509,17 @@ export default function Home() {
       {/* Venha nos visitar */}
       <div
         ref={flexboxRef4}
-        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 my-3 md:my-4 lg:my-8 mx-6 md:mx-8 lg:mx-16 opacity-0 translate-y-10 bg-white rounded-xl"
+        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 opacity-0 translate-y-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
+        }}
       >
-        <div className="flexbox-left md:flex-col lg:flex-row items-start gap-4 lg:w-[50%]">
-          <p className="text-gray-900 font-bold opacity-100 lg:text-4xl md:text-3xl text-3xl  text-center md:text-center lg:text-left">
+        <div className="flexbox-left md:flex-col lg:flex-row items-start gap-4 lg:w-[50%] text-white">
+          <p className="font-bold opacity-100 lg:text-4xl md:text-3xl text-3xl  text-center md:text-center lg:text-left">
             Venha nos visitar
           </p>
-          <p className=" text-lg text-gray-600  text-center md:text-center lg:text-left">
+          <p className=" text-lg text-center md:text-center lg:text-left">
             Estamos te esperando para um cafézinho ☕
           </p>
           <div className="w-full mt-4 mb-4 flex bg-white opacity-100 rounded-lg overflow-hidden ">
@@ -527,28 +528,40 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center lg:m-6 lg:mt-12 lg:items-center lg:justify-start">
           <div className="flex rounded-2xl bg-gray-50 lg:m-6 lg:p-4 m-2 p-1 items-center flex-col">
-            <h3 className="text-md md:text-xl lg:text-2xl text-center font-semibold text-gray-900">
-              Horário de Funcionamento
-            </h3>
-            <address className="lg:mt-3 space-y-1 mt-1 text-center justify-end text-md md:text-xl lg:text-2xl not-italic text-gray-600">
-              <p>Segunda à Sexta 07:30 - 18:00</p>
-              <p>Sábado 08:00 - 12:00</p>
-            </address>
+            <div className="w-full h-full bg-[#f9fcfd] shadow-lg rounded-2xl p-4 flex flex-col items-center">
+              <h3 className="text-md md:text-xl lg:text-2xl text-center font-semibold text-gray-900">
+                Horário de Funcionamento
+              </h3>
+              <address className="lg:mt-3 space-y-1 mt-1 text-center justify-end text-md md:text-xl lg:text-2xl not-italic text-gray-600">
+                <p>Segunda à Sexta 07:30 - 18:00</p>
+                <p>Sábado 08:00 - 12:00</p>
+              </address>
+            </div>
           </div>
-          <div className="flex-col rounded-2xl bg-gray-50 lg:m-6 lg:p-4 mt-4 items-center">
-            <h3 className=" text-md md:text-xl lg:text-2xl text-center font-semibold text-gray-900">
-              Nosso endereço
-            </h3>
-            <address className="flex-col mt-2 space-y-1 items-center text-center text-md md:text-xl lg:text-2xl not-italic text-gray-600">
-              <p>Rua Projetada Quadra 01 Lote 07 - Núcleo Industrial</p>
-              <p>Ribas do Rio Pardo - MS</p>
-            </address>
+          <div className="flex rounded-2xl bg-gray-50 lg:m-6 lg:p-4 m-2 p-1 items-center flex-col">
+            <div className="w-full h-full bg-[#f9fcfd] shadow-lg rounded-2xl p-4 flex flex-col items-center">
+              <h3 className=" text-md md:text-xl lg:text-2xl text-center font-semibold text-gray-900">
+                Nosso endereço
+              </h3>
+              <address className="flex-col mt-2 space-y-1 items-center text-center text-md md:text-xl lg:text-2xl not-italic text-gray-600">
+                <p>Rua Projetada, Quadra 01 </p>
+                <p>
+                  <span className="whitespace-nowrap">
+                    Lote 07 - Núcleo Industrial
+                  </span>
+                </p>
+                <p>Ribas do Rio Pardo - MS</p>
+              </address>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Seção de Contato */}
-      <div className="contato flex flex-col md:flex-col lg:flex-row mt-3 md:mt-4 lg:mt-8 bg-white h-full w-full">
+      <div
+        className="contato flex flex-col md:flex-col lg:flex-row h-full w-full"
+        style={{ backgroundColor: "#f1fbff" }}
+      >
         {/* Conteúdo */}
         <div className="left-side flex flex-col my-auto items-center lg:items-end lg:text-right lg:justify-center p-4 h-full w-full lg:w-1/2">
           <h2 className="text-[#011F4B] lg:text-4xl md:text-3xl text-3xl font-bold">
@@ -587,7 +600,7 @@ export default function Home() {
           <img
             alt="painter"
             src="bg/bg5.png"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:w-2/3"
           />
         </div>
       </div>

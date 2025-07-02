@@ -24,7 +24,7 @@ export default function WhatsAppBtn() {
     });
   }, []);
 
-  const phoneNumber = "5567999242050"; // Coloque o número no formato internacional
+  const phoneNumber = "55567999242050"; // Coloque o número no formato internacional
 
   return (
     <a

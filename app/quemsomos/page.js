@@ -77,9 +77,8 @@ export default function QuemSomos() {
             sobretudo a humanização da marca.
           </p>
           <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            Nesses 3 anos alcançamos um grande público, um principal deles são
-            as empresas instaladas na nossa cidade para a Obra Projeto Cerrado
-            da Suzano, empresas que vem sendo clientes fiés em nossa jornada.
+            Nesses 4 anos alcançamos um grande público, com destaque para as
+            as empresas instaladas na nossa cidade para o Projeto Cerrado, empresas que vem sendo clientes fiés em nossa jornada.
           </p>
         </div>
 
@@ -87,8 +86,8 @@ export default function QuemSomos() {
         <div className="flex px-6 h-[500px] lg:px-8 lg:w-[45%]">
           <img
             alt="Product screenshot"
-            src="/bg/bg1.png"
-            className="w-full h-full object-cover object-top transform -scale-x-100 rounded-2xl shadow-2xl"
+            src="/idv-portal/fachada-loja.png"
+            className="w-full h-full object-cover object-top transform  rounded-2xl shadow-2xl"
           />
         </div>
       </div>
@@ -113,7 +112,7 @@ export default function QuemSomos() {
           </p>
           <p className="text-lg md:text-xl text-center lg:text-left lg:text-2xl text-gray-600 leading-relaxed">
             Nossa estrutura conta com equipamentos de última geração, que
-            garantem a qualidade da lavagem e secagem das suas peças, com padrão
+            garantem a qualidade da lavagem e secagem das suas peças com padrão
             de qualidade industrial.
           </p>
           <div className="flex-col items-center w-full mt-4">

@@ -2,7 +2,6 @@ const navigation = {
   main: [
     { name: "Quem somos", href: "/quemsomos" },
     { name: "Nossos Serviços", href: "/servicos" },
-    { name: "Dicas", href: "/blog" },
     {
       name: "Instagram",
       href: "/https://www.instagram.com/lavanderiariopardo",
