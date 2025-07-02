@@ -82,6 +82,36 @@ export default function Home() {
         "Contamos com frota dedicada e equipe treinada para coletar e entregar seus materiais com segurança e pontualidade, seja na sua empresa ou na sua casa.",
       icon: FaTruck,
     },
+    {
+      name: "Marcas de Confiança",
+      description:
+        " Trabalhamos com fabricantes renomados, reconhecidos nacional einternacionalmente, para garantir a qualidade dos nossos serviços.",
+      icon: FaTruck,
+    },
+    {
+      name: "Produtos de Alta Performance",
+      description:
+        " Utilizamos apenas produtos de alta performance, cuidadosamente selecionados para resultados superiores e preservação das suas peças.",
+      icon: FaStar,
+    },
+    {
+      name: "Soluções Inovadoras",
+      description:
+        "Nossas parcerias nos permitem oferecer soluções inovadoras, eficientes e seguras para todos os tipos de peças e necessidades.",
+      icon: FaLightbulb,
+    },
+    {
+      name: "Segurança e Preservação",
+      description:
+        "Priorizamos a segurança e a preservação das suas peças, com fornecedores avaliados constantemente para manter o padrão de excelência.",
+      icon: FaShield,
+    },  
+    {
+      name: "Compromisso com a Qualidade",
+      description:
+        "Conte com a nossa experiência e com a força das melhores marcas do setor para garantir tranquilidade, segurança e qualidade em cada serviço prestado.",
+      icon: FaHandshake,
+    },  
   ];
 
   const phoneNumber = "5567999242050";
