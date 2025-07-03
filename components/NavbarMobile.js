@@ -75,7 +75,7 @@ const NavbarMobile = () => {
                 <Link
                   href={item.link}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 text-gray-700 hover:bg-gray-300 font-bold"
+                  className="block px-4 py-3 text-gray-700 hover:bg-[#223569] hover:text-white font-bold"
                 >
                   {item.name}
                 </Link>

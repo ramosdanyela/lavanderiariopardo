@@ -27,7 +27,7 @@ const NavbarDesktop = () => {
           <li key={index}>
             <a
               href={item.link}
-              className="hover:bg-gray-300 text-gray-700 lg:text-2xl rounded-full lg:p-2 text-bold"
+              className="hover:bg-[#223569] hover:text-white hover:scale-105 hover:shadow-lg text-gray-700 lg:text-2xl rounded-full lg:p-3 text-bold transition-all duration-300 transform"
             >
               {item.name}
             </a>

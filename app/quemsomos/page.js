@@ -66,7 +66,7 @@ export default function QuemSomos() {
             Lavanderia Rio Pardo
           </p>
           <p className="mt-8 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            A Lavanderia Rio Pardo tem 4 anos de existência no mercado,
+            A Lavanderia Rio Pardo tem 5 anos de existência no mercado,
             oferecendo um serviço de qualidade a preços econômicos. Estamos aqui
             para facilitar e otimizar o tempo de nossos clientes no cuidado de
             suas peças.
@@ -77,8 +77,8 @@ export default function QuemSomos() {
             sobretudo a humanização da marca.
           </p>
           <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            Nesses 4 anos alcançamos um grande público, com destaque para as
-            as empresas instaladas na nossa cidade para o Projeto Cerrado, empresas que vem sendo clientes fiés em nossa jornada.
+            Nesses 5 anos alcançamos um grande público, com destaque para as
+            as empresas instaladas na nossa cidade para o Projeto Cerrado, empresas que vem sendo clientes fiéis em nossa jornada.
           </p>
         </div>
 

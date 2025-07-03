@@ -252,7 +252,7 @@ export default function Home() {
     <div className="flexbox-master flex flex-col w-full bg-[#ffff]">
       {/* Hero card */}
       <div
-        className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-10 pb-12 md:py-8 lg:pt-20"
+        className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-10 pb-12 md:py-8 lg:pt-36"
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           backgroundBlendMode: "overlay",
@@ -274,7 +274,7 @@ export default function Home() {
             href="https://wa.me/5567999242050"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 px-6 py-2 lg:mt-12 lg:mb-12 bg-[#23c5ed] text-white text-xl font-bold rounded-lg shadow-lg hover:bg-[#1ba3c2] transition"
+            className="mt-6 px-8 py-4 lg:mt-12 lg:mb-12 lg:px-12 lg:py-6 bg-[#23c5ed] text-white text-xl lg:text-3xl font-bold rounded-lg shadow-lg hover:bg-[#223569] hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
           >
             Solicitar Orçamento
           </a>
@@ -300,7 +300,7 @@ export default function Home() {
             <div className="mb-1 sm:mb-2 transform transition-transform duration-300 group-hover:scale-110">
               <feature.icon
                 aria-hidden="true"
-                className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-[#23c5ed]"
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 text-[#23c5ed] group-hover:text-[#223569]"
               />
             </div>
             <h3 className="text-sm sm:text-base md:text-xl font-semibold text-gray-800 text-center mb-1 sm:mb-2">
@@ -336,7 +336,7 @@ export default function Home() {
             O melhor cuidado para suas peças
           </p>
           <p className="lg:text-lg/8 md:text-md sm:text-sm text-white pt-4 ">
-            A Lavanderia Rio Pardo tem 4 anos de existência no mercado,
+            A Lavanderia Rio Pardo tem 5 anos de existência no mercado,
             oferecendo um <b>serviço de qualidade</b> a preços econômicos.
             Estamos aqui para <b>facilitar</b> e otimizar o tempo de nossos
             clientes no cuidado de suas peças. Temos como objetivo de
@@ -360,7 +360,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <Link
               href="/quemsomos"
-              className="flex hover:bg-white hover:text-[#23c5ed] rounded-full p-2 text-bold mt-6 text-white gap-1 hover:underline transition-colors duration-300"
+              className="flex hover:bg-[#223569] hover:text-white rounded-full p-2 text-bold mt-6 text-white gap-1 hover:underline transition-colors duration-300"
             >
               Veja mais
               <svg
@@ -394,7 +394,8 @@ export default function Home() {
       {/* Flexbox2 - Nossos serviços */}
       <div
         ref={flexboxRef3}
-        className="flex flex-col gap-8 p-8 bg-white w-full mx-6 md:mx-8 lg:mx-8 rounded-xl"
+        className="flex flex-col gap-8 p-8 w-full rounded-xl"
+        style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Título */}
         <div className="text-center">
@@ -413,21 +414,7 @@ export default function Home() {
               {serviceCards.map((card, idx) => (
                 <div key={idx} className="embla__slide flex-[0_0_100%] px-2">
                   <div className="bg-gradient-to-br rounded-3xl shadow-xl p-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 min-h-[400px] from-white to-gray-50">
-                    {/* Lado esquerdo - Conteúdo */}
-                    <div className="flex-1 text-center lg:text-left">
-                      <div className="flex items-center justify-center lg:justify-start mb-6">
-                        <div className="bg-[#23c5ed] p-4 rounded-2xl shadow-lg">
-                          {card.icon}
-                        </div>
-                        <h3 className="ml-4 text-2xl lg:text-3xl font-bold text-gray-900">
-                          {card.title}
-                        </h3>
-                      </div>
-                      <div className="text-gray-600 text-lg leading-relaxed mb-6">
-                        {card.description}
-                      </div>
-                    </div>
-                    {/* Lado direito - Imagem */}
+                    {/* Lado esquerdo - Imagem */}
                     {card.title === "Retirada do Material" ? (
                       <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
                         <img
@@ -459,6 +446,21 @@ export default function Home() {
                         {card.image}
                       </div>
                     )}
+
+                    {/* Lado direito - Conteúdo */}
+                    <div className="flex-1 text-center lg:text-left">
+                      <div className="flex items-center justify-center lg:justify-start mb-6">
+                        <div className="bg-[#23c5ed] p-4 rounded-2xl shadow-lg">
+                          {card.icon}
+                        </div>
+                        <h3 className="ml-4 text-2xl lg:text-3xl font-bold text-gray-900">
+                          {card.title}
+                        </h3>
+                      </div>
+                      <div className="text-gray-600 text-lg leading-relaxed mb-6">
+                        {card.description}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -485,7 +487,7 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Link
             href="/servicos"
-            className="flex hover:bg-gray-300 rounded-full p-1 text-bold mt-2 lg:mt-6 text-[#23c5ed] gap-1 hover:underline"
+            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-2 lg:mt-6 text-[#23c5ed] gap-1 hover:underline"
           >
             Veja mais
             <svg
@@ -569,28 +571,23 @@ export default function Home() {
           </h2>
 
           {/* WhatsApp */}
-          <div className="flex items-center lg:items-end gap-3 lg:mt-4">
-            <span className="text-[#011F4B] font-bold sm:text-2xl md:text-xl lg:text-2xl">
-              Faça seu orçamento:
-            </span>
-          </div>
-          <div className="flex items-center gap-3 mt-4 lg:p-2 rounded-full hover:bg-gray-300">
+          <div className="flex items-center gap-3 mt-4 lg:p-2 rounded-full hover:bg-[#223569] hover:text-white">
             <img
               src="/icons/wpp-icon.gif"
               alt="WhatsApp"
               className="w-8 h-8 rounded-full"
             />
             <a href={`https://wa.me/${phoneNumber}`}>
-              <span className="text-[#011F4B] text-2xl cursor-pointer">
+              <span className="text-[#011F4B] text-2xl cursor-pointer hover:text-[#223569]">
                 (067) 99924-2050
               </span>
             </a>
           </div>
 
           {/* Email */}
-          <div className="flex items-center gap-3 mt-3">
+          <div className="flex items-center gap-3 mt-3 hover:bg-[#223569] hover:text-white rounded-full p-2">
             <img src="/icons/email-icon.svg" alt="Email" className="w-8 h-8" />
-            <span className="text-[#011F4B] sm: lg:text-2xl">
+            <span className="text-[#011F4B] sm: lg:text-2xl hover:text-[#223569]">
               lavanderiariopardo@gmail.com.br
             </span>
           </div>
