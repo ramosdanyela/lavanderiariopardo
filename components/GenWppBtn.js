@@ -37,7 +37,7 @@ export default function GenWppBtn() {
     animateSection(buttonRef); // Chama a animação ao montar o componente
   }, []);
 
-  const phoneNumber = "5567999242050"; // Coloque o número no formato internacional
+  const phoneNumber = "556799242050"; // Coloque o número no formato internacional
 
   return (
     <a

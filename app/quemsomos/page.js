@@ -7,12 +7,20 @@ import {
 } from "@heroicons/react/20/solid";
 import { FaTruck } from "react-icons/fa";
 import GenWppBtn from "@/components/GenWppBtn";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CarouselPaint } from "@/components/CarouselPaint";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const equipamentosImgs = [
+  "bg/maquina-lavar.jpeg",
+  "bg/maquina-secar.jpeg",
+  "bg/calandra.jpeg",
+];
 
 export default function QuemSomos() {
   const flexboxRef1 = useRef(null);
@@ -20,6 +28,10 @@ export default function QuemSomos() {
   const flexboxRef3 = useRef(null);
   const flexboxRef4 = useRef(null);
   const flexboxRef5 = useRef(null);
+  const [equipamentoIdx, setEquipamentoIdx] = useState(0);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
 
   useEffect(() => {
     const animateSection = (ref) => {
@@ -51,14 +63,22 @@ export default function QuemSomos() {
     animateSection(flexboxRef5);
   }, []);
 
+  // Carrossel simples de imagens
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEquipamentoIdx((prev) => (prev + 1) % equipamentosImgs.length);
+    }, 3000); // Troca a cada 3 segundos
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex flex-col bg-[#f9fcfd]">
       <div
         ref={flexboxRef1}
-        className="container-hero flex flex-col md:flex-row pt-[8rem] lg:pt-[10rem] lg:flex-row"
+        className="container-hero flex flex-col md:flex-row pt-8 md:pt-[8rem] lg:pt-[10rem] lg:flex-row"
       >
         {/* Coluna da Esquerda - Descrição */}
-        <div className="flex flex-col px-6  md:px-8  w-full  lg:w-[55%]">
+        <div className="flex flex-col px-4 md:px-8  w-full  lg:w-[55%]">
           <h2 className="text-lg lg:text-2xl font-medium text-[#23c5ed] tracking-wide">
             Higiene e cuidado que faz a diferença
           </h2>
@@ -77,13 +97,14 @@ export default function QuemSomos() {
             sobretudo a humanização da marca.
           </p>
           <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            Nesses 5 anos alcançamos um grande público, com destaque para as
-            as empresas instaladas na nossa cidade para o Projeto Cerrado, empresas que vem sendo clientes fiéis em nossa jornada.
+            Nesses 5 anos alcançamos um grande público, com destaque para as as
+            empresas instaladas na nossa cidade para o Projeto Cerrado, empresas
+            que vem sendo clientes fiéis em nossa jornada.
           </p>
         </div>
 
         {/* Coluna Direita - Imagem */}
-        <div className="flex px-6 h-[500px] lg:px-8 lg:w-[45%]">
+        <div className="flex px-4 h-[500px] lg:px-8 lg:w-[45%]">
           <img
             alt="Product screenshot"
             src="/idv-portal/fachada-loja.png"
@@ -95,14 +116,32 @@ export default function QuemSomos() {
       {/* Seção 1: Equipamentos */}
       <div
         ref={flexboxRef2}
-        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-12 mb-12 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
+        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-6 mb-6 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
       >
-        <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden">
-          <img
-            alt="Equipamentos de última geração"
-            src="/equipe/lavanderia3.png"
-            className="w-full h-full object-cover rounded-xl p-2 hover:scale-105 transition-transform duration-300"
-          />
+        {/* Carrossel com borda azul */}
+        <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden flex items-center justify-center">
+          <div className="w-full h-full p-2 flex items-center justify-center">
+            <div
+              className="embla w-full h-[350px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden"
+              ref={emblaRef}
+            >
+              <div className="embla__container flex h-full">
+                {equipamentosImgs.map((src, idx) => (
+                  <div
+                    className="embla__slide flex-[0_0_100%] h-full flex items-center justify-center"
+                    key={idx}
+                  >
+                    <img
+                      src={src}
+                      alt={`Equipamento ${idx + 1}`}
+                      className="w-full h-full object-cover rounded-xl transition-all duration-700"
+                      style={{ objectPosition: "center" }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8">
@@ -124,7 +163,7 @@ export default function QuemSomos() {
       {/* Seção 2: Equipe especializada */}
       <div
         ref={flexboxRef3}
-        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-12 mb-12 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
+        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-6 mb-6 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
       >
         <div className="lg:w-1/2 bg-[#23c5ed] -scale-x-100 rounded-2xl shadow-xl overflow-hidden">
           <img
@@ -152,12 +191,12 @@ export default function QuemSomos() {
       {/* Seção 3: Coleta e Entrega */}
       <div
         ref={flexboxRef4}
-        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-12 mb-12 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
+        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-6 mb-6 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
       >
         <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden">
           <img
             alt="Equipamentos de última geração"
-            src="/equipe/lavanderia4.png"
+            src="/bg/entrega.png"
             className="w-full h-full object-cover rounded-xl p-2 hover:scale-105 transition-transform duration-300"
           />
         </div>

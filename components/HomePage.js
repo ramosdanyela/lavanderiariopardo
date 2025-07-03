@@ -119,11 +119,13 @@ export default function Home() {
       icon: <FaTruck className="w-12 h-12 text-white" />,
       title: "Retirada do Material",
       description: (
-        <>
-          Realizamos a retirada e entrega do material conforme sua necessidade,
-          em horários e prazos pré-determinados. Fornecemos tickets com
-          descrição detalhada e contagem prévia das peças.
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
+        <div className="flex flex-col h-full">
+          <div className="text-gray-600 text-lg leading-relaxed mb-4">
+            Realizamos a retirada e entrega do material conforme sua
+            necessidade, em horários e prazos pré-determinados. Fornecemos
+            tickets com descrição detalhada e contagem prévia das peças.
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-auto">
             <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
               <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
               <span className="text-gray-700 font-medium">
@@ -135,7 +137,7 @@ export default function Home() {
               <span className="text-gray-700 font-medium">Entrega pontual</span>
             </div>
           </div>
-        </>
+        </div>
       ),
       image: (
         <div className="text-center text-white">
@@ -148,47 +150,8 @@ export default function Home() {
       ),
     },
     {
-      icon: <FaShirt className="w-12 h-12 text-white" />,
-      title: "Peças que Lavamos",
-      description: (
-        <>
-          Lavamos diversos tipos de peças, desde roupas do dia a dia até itens
-          de cama, mesa e banho, sempre com cuidado e produtos de alta
-          performance.
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-            <div className="flex items-center">
-              <FaSocks className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Meias e Roupas Íntimas</span>
-            </div>
-            <div className="flex items-center">
-              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Toalhas de Banho e Rosto</span>
-            </div>
-            <div className="flex items-center">
-              <FaBed className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Lençóis e Fronhas</span>
-            </div>
-            <div className="flex items-center">
-              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Camisas e Camisetas</span>
-            </div>
-          </div>
-        </>
-      ),
-      image: (
-        <div className="text-center text-white">
-          <img
-            src="/bg/cama-mesa.jpg"
-            alt="Cesta de roupas coloridas"
-            className="w-full h-full bg-contain rounded-xl"
-          />
-        </div>
-      ),
-      bg: "from-[#23c5ed] to-[#1ba3c2]",
-    },
-    {
       icon: <FaShield className="w-12 h-12 text-white" />,
-      title: "EPI e Higienização",
+      title: "Higienização de EPIs",
       description: (
         <>
           Realizamos a lavagem e higienização de Roupas de Proteção EPI em
@@ -221,6 +184,117 @@ export default function Home() {
       ),
       bg: "from-[#23c5ed] to-[#1ba3c2]",
     },
+    {
+      icon: <FaShirt className="w-12 h-12 text-white" />,
+      title: "Uniformes Industriais",
+      description: (
+        <div className="flex flex-col h-full">
+          <div className="text-gray-600 text-lg leading-relaxed mb-4">
+            Oferecemos lavagem especializada para uniformes industriais,
+            incluindo macacões, jalecos, calças e camisas de trabalho.
+            Utilizamos produtos específicos para manter a durabilidade e
+            resistência das peças, garantindo que seus funcionários tenham
+            sempre uniformes limpos e em perfeito estado.
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-auto">
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Lavagem Especializada
+              </span>
+            </div>
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Durabilidade Garantida
+              </span>
+            </div>
+          </div>
+        </div>
+      ),
+      image: (
+        <div className="text-center text-white">
+          <FaShirt className="w-20 h-20 mx-auto mb-4 opacity-80" />
+          <p className="text-lg font-semibold">Uniformes Industriais</p>
+          <p className="text-sm opacity-90">Qualidade e resistência</p>
+        </div>
+      ),
+      bg: "from-[#23c5ed] to-[#1ba3c2]",
+    },
+    {
+      icon: <FaBed className="w-12 h-12 text-white" />,
+      title: "Pacotes para Hotelaria e Alojamentos",
+      description: (
+        <>
+          Oferecemos soluções completas para hotéis, pousadas e alojamentos, com
+          planos personalizados para grandes volumes de peças, garantindo
+          praticidade, economia e qualidade.
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Coleta e entrega programada
+              </span>
+            </div>
+            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700 font-medium">
+                Higienização de enxoval
+              </span>
+            </div>
+          </div>
+        </>
+      ),
+      image: (
+        <div className="text-center text-white">
+          <img
+            src="/bg/cama-mesa.jpg"
+            alt="Pacotes para Hotelaria e Alojamentos"
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+      ),
+      bg: "from-[#23c5ed] to-[#1ba3c2]",
+    },
+    {
+      icon: <FaShirt className="w-12 h-12 text-white" />,
+      title: "Peças pessoais",
+      description: (
+        <>
+          Lavamos diversos tipos de peças, desde roupas do dia a dia até itens
+          de cama, mesa e banho, sempre com cuidado e produtos de alta
+          performance.
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+            <div className="flex items-center">
+              <FaSocks className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Meias e Roupas Íntimas</span>
+            </div>
+            <div className="flex items-center">
+              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Toalhas de Banho e Rosto</span>
+            </div>
+            <div className="flex items-center">
+              <FaBed className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Lençóis e Fronhas</span>
+            </div>
+            <div className="flex items-center">
+              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
+              <span className="text-gray-700">Camisas e Camisetas</span>
+            </div>
+          </div>
+        </>
+      ),
+      image: (
+        <div className="text-center text-white w-full h-full">
+          <img
+            src="/bg/roupas-coloridas.jpg"
+            alt="Peças pessoais"
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+      ),
+      bg: "from-[#23c5ed] to-[#1ba3c2]",
+    },
   ];
 
   // Embla Carousel setup
@@ -249,7 +323,10 @@ export default function Home() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="flexbox-master flex flex-col w-full bg-[#ffff]">
+    <div
+      className="flexbox-master flex flex-col w-full"
+      style={{ backgroundColor: "#f1fbff" }}
+    >
       {/* Hero card */}
       <div
         className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-10 pb-12 md:py-8 lg:pt-36"
@@ -282,13 +359,16 @@ export default function Home() {
       </div>
 
       {/* Features Container */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-white rounded-xl">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 rounded-xl"
+        style={{ backgroundColor: "#f1fbff" }}
+      >
         {features.map((feature, idx) => (
           <div
             key={feature.name}
             className={
               `flex flex-col items-center justify-center rounded-xl transition-all duration-300 cursor-pointer group ` +
-              `bg-gray-50 hover:scale-105 hover:shadow-lg ` +
+              `bg-white hover:scale-105 hover:shadow-lg ` +
               `p-2 sm:p-3 md:p-6 ` +
               (expandedFeature === idx ? "z-10 shadow-2xl" : "")
             }
@@ -324,7 +404,7 @@ export default function Home() {
 
       {/* 1st container*/}
       <div
-        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 md:p-12 lg:p-16 my-3 md:my-4 lg:my-2"
+        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8"
         style={{
           backgroundImage:
             "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
@@ -394,7 +474,7 @@ export default function Home() {
       {/* Flexbox2 - Nossos serviços */}
       <div
         ref={flexboxRef3}
-        className="flex flex-col gap-8 p-8 w-full rounded-xl"
+        className="flex flex-col gap-8 w-full p-8"
         style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Título */}
@@ -408,57 +488,77 @@ export default function Home() {
         </div>
 
         {/* Carrossel de Serviços */}
-        <div className="relative w-full">
+        <div className="relative w-full shadow-none">
           <div className="embla overflow-hidden rounded-3xl" ref={emblaRef}>
             <div className="embla__container flex">
               {serviceCards.map((card, idx) => (
                 <div key={idx} className="embla__slide flex-[0_0_100%] px-2">
-                  <div className="bg-gradient-to-br rounded-3xl shadow-xl p-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 min-h-[400px] from-white to-gray-50">
+                  <div
+                    className="rounded-3xl p-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 min-h-[400px]"
+                    style={{ backgroundColor: "#f1fbff" }}
+                  >
                     {/* Lado esquerdo - Imagem */}
                     {card.title === "Retirada do Material" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
                         <img
-                          src="/equipe/carro.jpeg"
+                          src="/bg/entrega.png"
                           alt="Carro de entrega"
                           className="w-full h-full object-cover rounded-2xl"
                         />
                       </div>
                     ) : card.title === "Peças que Lavamos" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
                         <img
                           src="/bg/cama-mesa.jpg"
                           alt="Peças que Lavamos"
                           className="w-full h-full object-cover rounded-2xl"
                         />
                       </div>
-                    ) : card.title === "EPI e Higienização" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center shadow-lg p-0 m-0">
+                    ) : card.title === "Higienização de EPIs" ? (
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
                         <img
                           src="/bg/epis.png"
-                          alt="EPI e Higienização"
+                          alt="EPIs e Higienização"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    ) : card.title === "Uniformes Industriais" ? (
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
+                        <img
+                          src="/bg/uniformes.png"
+                          alt="Uniformes Industriais"
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
+                      </div>
+                    ) : card.title ===
+                      "Pacotes para Hotelaria e Alojamentos" ? (
+                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
+                        <img
+                          src="/bg/cama-mesa.jpg"
+                          alt="Pacotes para Hotelaria e Alojamentos"
                           className="w-full h-full object-cover rounded-2xl"
                         />
                       </div>
                     ) : (
                       <div
-                        className={`w-full lg:w-80 h-64 lg:h-80 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center shadow-lg`}
+                        className={`w-full lg:w-80 h-64 lg:h-80 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center`}
                       >
                         {card.image}
                       </div>
                     )}
 
                     {/* Lado direito - Conteúdo */}
-                    <div className="flex-1 text-center lg:text-left">
-                      <div className="flex items-center justify-center lg:justify-start mb-6">
-                        <div className="bg-[#23c5ed] p-4 rounded-2xl shadow-lg">
-                          {card.icon}
-                        </div>
-                        <h3 className="ml-4 text-2xl lg:text-3xl font-bold text-gray-900">
+                    <div className="flex-1 text-center lg:text-left flex flex-col justify-between h-64 lg:h-80">
+                      <div className="flex flex-col justify-between h-full">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">
                           {card.title}
                         </h3>
-                      </div>
-                      <div className="text-gray-600 text-lg leading-relaxed mb-6">
-                        {card.description}
+
+                        <div className="flex-1 flex flex-col justify-center">
+                          <div className="text-gray-600 text-lg leading-relaxed">
+                            {card.description}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -468,7 +568,7 @@ export default function Home() {
           </div>
 
           {/* Indicadores de navegação */}
-          <div className="flex justify-center mt-6 space-x-3">
+          <div className="flex justify-center mt-1 space-x-3">
             {serviceCards.map((_, index) => (
               <button
                 key={index}
@@ -487,7 +587,7 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Link
             href="/servicos"
-            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-2 lg:mt-6 text-[#23c5ed] gap-1 hover:underline"
+            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 lg:mt-1 text-[#23c5ed] gap-1 hover:underline"
           >
             Veja mais
             <svg
@@ -524,13 +624,19 @@ export default function Home() {
           <p className=" text-lg text-center md:text-center lg:text-left">
             Estamos te esperando para um cafézinho ☕
           </p>
-          <div className="w-full mt-4 mb-4 flex bg-white opacity-100 rounded-lg overflow-hidden ">
+          <div className="w-full mt-4 mb-4 flex bg-white opacity-100 rounded-lg overflow-hidden h-[500px]">
             <GoogleMap />{" "}
           </div>
         </div>
         <div className="flex flex-col items-center lg:m-6 lg:mt-12 lg:items-center lg:justify-start">
-          <div className="flex rounded-2xl bg-gray-50 lg:m-6 lg:p-4 m-2 p-1 items-center flex-col">
-            <div className="w-full h-full bg-[#f9fcfd] shadow-lg rounded-2xl p-4 flex flex-col items-center">
+          <div
+            className="flex rounded-2xl lg:m-6 lg:p-4 m-2 p-1 items-center flex-col lg:mt-4"
+            style={{ backgroundColor: "#f5f0e4" }}
+          >
+            <div
+              className="w-full h-full shadow-lg rounded-2xl p-4 flex flex-col items-center"
+              style={{ backgroundColor: "#f5f0e4" }}
+            >
               <h3 className="text-md md:text-xl lg:text-2xl text-center font-semibold text-gray-900">
                 Horário de Funcionamento
               </h3>
@@ -540,8 +646,14 @@ export default function Home() {
               </address>
             </div>
           </div>
-          <div className="flex rounded-2xl bg-gray-50 lg:m-6 lg:p-4 m-2 p-1 items-center flex-col">
-            <div className="w-full h-full bg-[#f9fcfd] shadow-lg rounded-2xl p-4 flex flex-col items-center">
+          <div
+            className="flex rounded-2xl lg:m-6 lg:p-4 m-2 p-1 items-center flex-col lg:mt-auto"
+            style={{ backgroundColor: "#f5f0e4" }}
+          >
+            <div
+              className="w-full h-full shadow-lg rounded-2xl p-4 flex flex-col items-center"
+              style={{ backgroundColor: "#f5f0e4" }}
+            >
               <h3 className=" text-md md:text-xl lg:text-2xl text-center font-semibold text-gray-900">
                 Nosso endereço
               </h3>
@@ -561,7 +673,7 @@ export default function Home() {
 
       {/* Seção de Contato */}
       <div
-        className="contato flex flex-col md:flex-col lg:flex-row h-full w-full"
+        className="contato flex flex-col md:flex-col lg:flex-row h-full w-full p-8"
         style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Conteúdo */}
