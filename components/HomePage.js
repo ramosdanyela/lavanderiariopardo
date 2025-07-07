@@ -49,7 +49,7 @@ export default function Home() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 80%",
+              start: "top 90%",
               end: "top 20%",
               toggleActions: "play none none reverse",
               markers: false,
@@ -120,21 +120,23 @@ export default function Home() {
       title: "Retirada do Material",
       description: (
         <div className="flex flex-col h-full">
-          <div className="text-gray-600 text-lg leading-relaxed mb-4">
+          <div className="text-gray-600 text-sm md:text-lg leading-relaxed mb-4">
             Realizamos a retirada e entrega do material conforme sua
             necessidade, em horários e prazos pré-determinados. Fornecemos
             tickets com descrição detalhada e contagem prévia das peças.
           </div>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-auto">
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Coleta na sua empresa
               </span>
             </div>
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaClock className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">Entrega pontual</span>
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaClock className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
+                Entrega pontual
+              </span>
             </div>
           </div>
         </div>
@@ -158,15 +160,15 @@ export default function Home() {
           geral, utilizando produtos profissionais e de alta performance para
           manter a originalidade das suas peças.
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Higienização Profissional
               </span>
             </div>
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Preservação do EPI
               </span>
             </div>
@@ -189,23 +191,20 @@ export default function Home() {
       title: "Uniformes Industriais",
       description: (
         <div className="flex flex-col h-full">
-          <div className="text-gray-600 text-lg leading-relaxed mb-4">
+          <div className="text-gray-600 text-sm md:text-lg leading-relaxed mb-4">
             Oferecemos lavagem especializada para uniformes industriais,
             incluindo macacões, jalecos, calças e camisas de trabalho.
-            Utilizamos produtos específicos para manter a durabilidade e
-            resistência das peças, garantindo que seus funcionários tenham
-            sempre uniformes limpos e em perfeito estado.
           </div>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-auto">
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Lavagem Especializada
               </span>
             </div>
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Durabilidade Garantida
               </span>
             </div>
@@ -230,15 +229,15 @@ export default function Home() {
           planos personalizados para grandes volumes de peças, garantindo
           praticidade, economia e qualidade.
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Coleta e entrega programada
               </span>
             </div>
-            <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700 font-medium">
+            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
+              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 font-medium text-xs md:text-base">
                 Higienização de enxoval
               </span>
             </div>
@@ -266,20 +265,28 @@ export default function Home() {
           performance.
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
             <div className="flex items-center">
-              <FaSocks className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Meias e Roupas Íntimas</span>
+              <FaSocks className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 text-xs md:text-base">
+                Meias e Roupas Íntimas
+              </span>
             </div>
             <div className="flex items-center">
-              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Toalhas de Banho e Rosto</span>
+              <FaShirt className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 text-xs md:text-base">
+                Toalhas de Banho e Rosto
+              </span>
             </div>
             <div className="flex items-center">
-              <FaBed className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Lençóis e Fronhas</span>
+              <FaBed className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 text-xs md:text-base">
+                Lençóis e Fronhas
+              </span>
             </div>
             <div className="flex items-center">
-              <FaShirt className="text-[#23c5ed] w-5 h-5 mr-2" />
-              <span className="text-gray-700">Camisas e Camisetas</span>
+              <FaShirt className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+              <span className="text-gray-700 text-xs md:text-base">
+                Camisas e Camisetas
+              </span>
             </div>
           </div>
         </>
@@ -404,7 +411,7 @@ export default function Home() {
 
       {/* 1st container*/}
       <div
-        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8"
+        className="flex flex-col md:flex-col lg:flex-row gap-4 p-8 h-full md:min-h-fit"
         style={{
           backgroundImage:
             "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
@@ -412,10 +419,10 @@ export default function Home() {
       >
         {/* Coluna Esquerda - Texto + Logos */}
         <div className="flex flex-col lg:w-[45%] justify-center">
-          <p className="text-white pb-2 leading-relaxed lg:text-4xl md:text-3xl text-2xl font-bold text-center md:text-center lg:text-left">
+          <p className="text-white pb-2 leading-relaxed text-xl md:text-3xl lg:text-4xl font-bold text-center md:text-center lg:text-left">
             O melhor cuidado para suas peças
           </p>
-          <p className="lg:text-lg/8 md:text-md sm:text-sm text-white pt-4 ">
+          <p className="text-sm text-white pt-4">
             A Lavanderia Rio Pardo tem 5 anos de existência no mercado,
             oferecendo um <b>serviço de qualidade</b> a preços econômicos.
             Estamos aqui para <b>facilitar</b> e otimizar o tempo de nossos
@@ -425,13 +432,13 @@ export default function Home() {
             marca.
           </p>
 
-          <p className="lg:text-lg/8 md:text-md text-sm text-white">
+          <p className="text-sm text-white">
             {" "}
             Nossa equipe de especialistas está pronta para oferecer um{" "}
             <b>atendimento personalizado</b> a preços econômicos.
           </p>
 
-          <p className="lg:text-lg/8 md:text-md text-sm text-white pt-2 ">
+          <p className="text-sm text-white pt-2">
             Nossa missão é otimizar seu tempo e garantir a manutenção da
             qualidade e higiene das suas peças.{" "}
             <b>Conte com a Lavanderia Rio Pardo!</b>{" "}
@@ -474,7 +481,7 @@ export default function Home() {
       {/* Flexbox2 - Nossos serviços */}
       <div
         ref={flexboxRef3}
-        className="flex flex-col gap-8 w-full p-8"
+        className="flex flex-col gap-8 w-full p-4  md:min-h-fit"
         style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Título */}
@@ -488,13 +495,13 @@ export default function Home() {
         </div>
 
         {/* Carrossel de Serviços */}
-        <div className="relative w-full shadow-none">
+        <div className="relative w-full shadow-none -mt-4 md:mt-0">
           <div className="embla overflow-hidden rounded-3xl" ref={emblaRef}>
             <div className="embla__container flex">
               {serviceCards.map((card, idx) => (
                 <div key={idx} className="embla__slide flex-[0_0_100%] px-2">
                   <div
-                    className="rounded-3xl p-8 flex flex-col lg:flex-row items-center lg:items-start gap-8 min-h-[400px]"
+                    className="rounded-3xl p-4 md:p-8 flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 min-h-[400px]"
                     style={{ backgroundColor: "#f1fbff" }}
                   >
                     {/* Lado esquerdo - Imagem */}
@@ -555,7 +562,7 @@ export default function Home() {
                         </h3>
 
                         <div className="flex-1 flex flex-col justify-center">
-                          <div className="text-gray-600 text-lg leading-relaxed">
+                          <div className="text-gray-600 text-sm md:text-lg leading-relaxed">
                             {card.description}
                           </div>
                         </div>
@@ -568,7 +575,7 @@ export default function Home() {
           </div>
 
           {/* Indicadores de navegação */}
-          <div className="flex justify-center mt-1 space-x-3">
+          <div className="flex justify-center mt-0 space-x-3">
             {serviceCards.map((_, index) => (
               <button
                 key={index}
@@ -587,7 +594,7 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Link
             href="/servicos"
-            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 lg:mt-1 text-[#23c5ed] gap-1 hover:underline"
+            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 text-[#23c5ed] gap-1 hover:underline"
           >
             Veja mais
             <svg
@@ -611,7 +618,7 @@ export default function Home() {
       {/* Venha nos visitar */}
       <div
         ref={flexboxRef4}
-        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 opacity-0 translate-y-10"
+        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 opacity-0 translate-y-10 min-h-screen md:min-h-fit"
         style={{
           backgroundImage:
             "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",
@@ -624,7 +631,7 @@ export default function Home() {
           <p className=" text-lg text-center md:text-center lg:text-left">
             Estamos te esperando para um cafézinho ☕
           </p>
-          <div className="w-full mt-4 mb-4 flex bg-white opacity-100 rounded-lg overflow-hidden h-[500px]">
+          <div className="w-full mt-4 mb-4 flex bg-white opacity-100 rounded-lg overflow-hidden h-[300px] md:h-[500px]">
             <GoogleMap />{" "}
           </div>
         </div>
@@ -673,7 +680,7 @@ export default function Home() {
 
       {/* Seção de Contato */}
       <div
-        className="contato flex flex-col md:flex-col lg:flex-row h-full w-full p-8"
+        className="contato flex flex-col md:flex-col lg:flex-row h-full w-full p-8 md:min-h-fit"
         style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Conteúdo */}
