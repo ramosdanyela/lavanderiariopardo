@@ -7,12 +7,12 @@ const NavbarMobile = () => {
   // Lista de itens do menu
   const menuItems = [
     { name: "Quem Somos", link: "/quemsomos" },
-    { name: "Nossos Serviços", link: "/nossoservicos" },
+    { name: "Nossos Serviços", link: "/servicos" },
     { name: "Contato", link: "/contato" },
   ];
 
   return (
-    <nav className="bg-[#f9fcfd] flex lg:hidden justify-center fixed w-full z-50 shadow-2xl items-center max-w-screen-sm px-4 relative">
+    <nav className="bg-[#f9fcfd] flex lg:hidden justify-center fixed w-full z-50 shadow-2xl items-center max-w-screen-sm px-4">
       {/* LOGO */}
       <div className="flex justify-center">
         <Link href="/">

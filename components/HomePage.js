@@ -418,13 +418,15 @@ export default function Home() {
         }}
       >
         {/* Coluna Esquerda - Texto + Logos */}
-        <div className="flex flex-col lg:w-[45%] justify-center">
+        <div className="flex flex-col lg:w-[45%] justify-center items-center lg:items-start lg:justify-start">
           <p className="text-white pb-2 leading-relaxed text-xl md:text-3xl lg:text-4xl font-bold text-center md:text-center lg:text-left">
             O melhor cuidado para suas peças
           </p>
-          <p className="text-sm text-white pt-4">
+          <p className="text-sm lg:text-lg text-white pt-4">
             A Lavanderia Rio Pardo tem 5 anos de existência no mercado,
             oferecendo um <b>serviço de qualidade</b> a preços econômicos.
+            </p>
+            <p className="text-sm lg:text-lg text-white pt-4">
             Estamos aqui para <b>facilitar</b> e otimizar o tempo de nossos
             clientes no cuidado de suas peças. Temos como objetivo de
             representar a simplicidade realçando a essência da marca, além de
@@ -432,13 +434,13 @@ export default function Home() {
             marca.
           </p>
 
-          <p className="text-sm text-white">
+          <p className="text-sm lg:text-lg text-white pt-4">
             {" "}
             Nossa equipe de especialistas está pronta para oferecer um{" "}
             <b>atendimento personalizado</b> a preços econômicos.
           </p>
 
-          <p className="text-sm text-white pt-2">
+          <p className="text-sm lg:text-lg text-white pt-2">
             Nossa missão é otimizar seu tempo e garantir a manutenção da
             qualidade e higiene das suas peças.{" "}
             <b>Conte com a Lavanderia Rio Pardo!</b>{" "}
@@ -485,7 +487,7 @@ export default function Home() {
         style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Título */}
-        <div className="text-center">
+        <div className="text-center lg:text-left">
           <h2 className="text-gray-800 lg:text-4xl md:text-3xl text-3xl font-bold">
             Nossos Serviços
           </h2>

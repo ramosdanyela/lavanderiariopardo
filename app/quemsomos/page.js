@@ -116,10 +116,10 @@ export default function QuemSomos() {
       {/* Seção 1: Equipamentos */}
       <div
         ref={flexboxRef2}
-        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-6 mb-6 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
+        className="opacity-0 translate-y-10 flex flex-col lg:mt-20 mt-6 mb-6 lg:my-6 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
       >
         {/* Carrossel com borda azul */}
-        <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden flex items-center justify-center">
+        <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden flex items-center justify-center order-2 lg:order-1">
           <div className="w-full h-full p-2 flex items-center justify-center">
             <div
               className="embla w-full h-[350px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden"
@@ -144,7 +144,7 @@ export default function QuemSomos() {
           </div>
         </div>
 
-        <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8">
+        <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 lg:my-2 gap-y-6 w-full lg:px-8 order-1 lg:order-2">
           <p className="flex mt-2 lg:mt-0 text-center md:text-center lg:text-left text-pretty text-2xl md:text-3xl lg:text-4xl leading-tight font-bold text-gray-900 gap-3">
             <StarIcon className="inline-block w-8 h-8 text-[#23c5ed]" />
             Equipamentos de última geração
@@ -163,17 +163,9 @@ export default function QuemSomos() {
       {/* Seção 2: Equipe especializada */}
       <div
         ref={flexboxRef3}
-        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-6 mb-6 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
+        className="opacity-0 translate-y-10 flex flex-col lg:my-8 mt-6 mb-6 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
       >
-        <div className="lg:w-1/2 bg-[#23c5ed] -scale-x-100 rounded-2xl shadow-xl overflow-hidden">
-          <img
-            alt="Equipe especializada"
-            src="/equipe/lavanderia.png"
-            className="w-full h-full object-cover rounded-xl p-2 hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-
-        <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8">
+        <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8 order-1">
           <p className="flex mt-2 lg:mt-0 text-center md:text-center lg:text-left text-pretty text-2xl md:text-3xl lg:text-4xl leading-tight font-bold text-gray-900 gap-3">
             <UserGroupIcon className="inline-block w-8 h-8 text-[#23c5ed]" />
             Equipe especializada
@@ -186,14 +178,22 @@ export default function QuemSomos() {
             <GenWppBtn />
           </div>
         </div>
+
+        <div className="lg:w-1/2 bg-[#23c5ed] -scale-x-100 rounded-2xl shadow-xl overflow-hidden order-2">
+          <img
+            alt="Equipe especializada"
+            src="/equipe/lavanderia.png"
+            className="w-full h-full object-cover rounded-xl p-2 hover:scale-105 transition-transform duration-300"
+          />
+        </div>
       </div>
 
       {/* Seção 3: Coleta e Entrega */}
       <div
         ref={flexboxRef4}
-        className="opacity-0 translate-y-10 flex flex-col lg:mt-24 mt-6 mb-6 lg:mb-24 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
+        className="opacity-0 translate-y-10 flex flex-col lg:my-8 mt-6 mb-6 md:flex-col lg:flex-row gap-x-16 items-center justify-between px-6 lg:px-12"
       >
-        <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden">
+        <div className="lg:w-1/2 bg-[#23c5ed] rounded-2xl shadow-xl overflow-hidden order-2">
           <img
             alt="Equipamentos de última geração"
             src="/bg/entrega.png"
@@ -201,7 +201,7 @@ export default function QuemSomos() {
           />
         </div>
 
-        <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8">
+        <div className="flex flex-col flex-1 items-center md:items-center lg:items-start max-w-2xl lg:mx-0 h-full my-8 gap-y-6 w-full lg:px-8 order-1">
           <p className="flex mt-2 lg:mt-0 text-center md:text-center lg:text-left text-pretty text-2xl md:text-3xl lg:text-4xl leading-tight font-bold text-gray-900 gap-3">
             <FaTruck className="inline-block w-8 h-8 text-[#23c5ed]" />
             Coleta e entrega
