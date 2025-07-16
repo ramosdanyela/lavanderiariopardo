@@ -49,7 +49,7 @@ export default function Home() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 90%",
+              start: "top 95%", // 5% do box visível
               end: "top 20%",
               toggleActions: "play none none reverse",
               markers: false,
@@ -111,196 +111,134 @@ export default function Home() {
     },
   ];
 
-  const phoneNumber = "5567999242050";
+  const phoneNumber = "5567992412050";
 
-  // Serviços para o carrossel
+  // Refatore o array serviceCards para incluir as imagens e pills como dados
   const serviceCards = [
     {
-      icon: <FaTruck className="w-12 h-12 text-white" />,
       title: "Retirada do Material",
-      description: (
-        <div className="flex flex-col h-full">
-          <div className="text-gray-600 text-sm md:text-lg leading-relaxed mb-4">
-            Realizamos a retirada e entrega do material conforme sua
-            necessidade, em horários e prazos pré-determinados. Fornecemos
-            tickets com descrição detalhada e contagem prévia das peças.
-          </div>
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-auto">
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Coleta na sua empresa
-              </span>
-            </div>
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaClock className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Entrega pontual
-              </span>
-            </div>
-          </div>
-        </div>
-      ),
-      image: (
-        <div className="text-center text-white">
-          <img
-            src="/bg/car.png"
-            alt="Carro de entrega"
-            className="w-full h-full bg-contain rounded-xl"
-          />
-        </div>
-      ),
+      image: {
+        src: "/bg/entrega.png",
+        alt: "Carro de entrega",
+      },
+      description:
+        "Realizamos a retirada e entrega do material conforme sua necessidade, em horários e prazos pré-determinados. Fornecemos tickets com descrição detalhada e contagem prévia das peças.",
+      pills: [
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Coleta na sua empresa",
+        },
+        {
+          icon: (
+            <FaClock className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Entrega pontual",
+        },
+      ],
     },
     {
-      icon: <FaShield className="w-12 h-12 text-white" />,
       title: "Higienização de EPIs",
-      description: (
-        <>
-          Realizamos a lavagem e higienização de Roupas de Proteção EPI em
-          geral, utilizando produtos profissionais e de alta performance para
-          manter a originalidade das suas peças.
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Higienização Profissional
-              </span>
-            </div>
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Preservação do EPI
-              </span>
-            </div>
-          </div>
-        </>
-      ),
-      image: (
-        <div className="text-center text-white">
-          <FaShield className="w-20 h-20 mx-auto mb-4 opacity-80" />
-          <p className="text-lg font-semibold">Equipamentos de Proteção</p>
-          <p className="text-sm opacity-90">
-            Segurança e cuidado especializado
-          </p>
-        </div>
-      ),
-      bg: "from-[#23c5ed] to-[#1ba3c2]",
+      image: {
+        src: "/bg/epis.png",
+        alt: "EPIs e Higienização",
+      },
+      description:
+        "Realizamos a lavagem e higienização de Roupas de Proteção EPI em geral, utilizando produtos profissionais e de alta performance para manter a originalidade das suas peças.",
+      pills: [
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Higienização Profissional",
+        },
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Preservação do EPI",
+        },
+      ],
     },
     {
-      icon: <FaShirt className="w-12 h-12 text-white" />,
       title: "Uniformes Industriais",
-      description: (
-        <div className="flex flex-col h-full">
-          <div className="text-gray-600 text-sm md:text-lg leading-relaxed mb-4">
-            Oferecemos lavagem especializada para uniformes industriais,
-            incluindo macacões, jalecos, calças e camisas de trabalho.
-          </div>
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-auto">
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Lavagem Especializada
-              </span>
-            </div>
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Durabilidade Garantida
-              </span>
-            </div>
-          </div>
-        </div>
-      ),
-      image: (
-        <div className="text-center text-white">
-          <FaShirt className="w-20 h-20 mx-auto mb-4 opacity-80" />
-          <p className="text-lg font-semibold">Uniformes Industriais</p>
-          <p className="text-sm opacity-90">Qualidade e resistência</p>
-        </div>
-      ),
-      bg: "from-[#23c5ed] to-[#1ba3c2]",
+      image: {
+        src: "/bg/uniformes.png",
+        alt: "Uniformes Industriais",
+      },
+      description:
+        "Oferecemos lavagem especializada para uniformes industriais, incluindo macacões, jalecos, calças e camisas de trabalho.",
+      pills: [
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Lavagem Especializada",
+        },
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Durabilidade Garantida",
+        },
+      ],
     },
     {
-      icon: <FaBed className="w-12 h-12 text-white" />,
       title: "Pacotes para Hotelaria e Alojamentos",
-      description: (
-        <>
-          Oferecemos soluções completas para hotéis, pousadas e alojamentos, com
-          planos personalizados para grandes volumes de peças, garantindo
-          praticidade, economia e qualidade.
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-4">
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Coleta e entrega programada
-              </span>
-            </div>
-            <div className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md">
-              <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 font-medium text-xs md:text-base">
-                Higienização de enxoval
-              </span>
-            </div>
-          </div>
-        </>
-      ),
-      image: (
-        <div className="text-center text-white">
-          <img
-            src="/bg/cama-mesa.jpg"
-            alt="Pacotes para Hotelaria e Alojamentos"
-            className="w-full h-full object-cover rounded-xl"
-          />
-        </div>
-      ),
-      bg: "from-[#23c5ed] to-[#1ba3c2]",
+      image: {
+        src: "/bg/cama-mesa.jpg",
+        alt: "Pacotes para Hotelaria e Alojamentos",
+      },
+      description:
+        "Oferecemos soluções completas para hotéis, pousadas e alojamentos, com planos personalizados para grandes volumes de peças, garantindo praticidade, economia e qualidade.",
+      pills: [
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Coleta e entrega programada",
+        },
+        {
+          icon: (
+            <FaCircleCheck className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Higienização de enxoval",
+        },
+      ],
     },
     {
-      icon: <FaShirt className="w-12 h-12 text-white" />,
       title: "Peças pessoais",
-      description: (
-        <>
-          Lavamos diversos tipos de peças, desde roupas do dia a dia até itens
-          de cama, mesa e banho, sempre com cuidado e produtos de alta
-          performance.
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-            <div className="flex items-center">
-              <FaSocks className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 text-xs md:text-base">
-                Meias e Roupas Íntimas
-              </span>
-            </div>
-            <div className="flex items-center">
-              <FaShirt className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 text-xs md:text-base">
-                Toalhas de Banho e Rosto
-              </span>
-            </div>
-            <div className="flex items-center">
-              <FaBed className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 text-xs md:text-base">
-                Lençóis e Fronhas
-              </span>
-            </div>
-            <div className="flex items-center">
-              <FaShirt className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
-              <span className="text-gray-700 text-xs md:text-base">
-                Camisas e Camisetas
-              </span>
-            </div>
-          </div>
-        </>
-      ),
-      image: (
-        <div className="text-center text-white w-full h-full">
-          <img
-            src="/bg/roupas-coloridas.jpg"
-            alt="Peças pessoais"
-            className="w-full h-full object-cover rounded-xl"
-          />
-        </div>
-      ),
-      bg: "from-[#23c5ed] to-[#1ba3c2]",
+      image: {
+        src: "/bg/roupas-coloridas.jpg",
+        alt: "Peças pessoais",
+      },
+      description:
+        "Lavamos diversos tipos de peças, desde roupas do dia a dia até itens de cama, mesa e banho, sempre com cuidado e produtos de alta performance.",
+      pills: [
+        {
+          icon: (
+            <FaSocks className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Meias e Roupas Íntimas",
+        },
+        {
+          icon: (
+            <FaShirt className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Toalhas de Banho e Rosto",
+        },
+        {
+          icon: <FaBed className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />,
+          text: "Lençóis e Fronhas",
+        },
+        {
+          icon: (
+            <FaShirt className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
+          ),
+          text: "Camisas e Camisetas",
+        },
+      ],
     },
   ];
 
@@ -336,7 +274,7 @@ export default function Home() {
     >
       {/* Hero card */}
       <div
-        className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-10 pb-12 md:py-8 lg:pt-36"
+        className="herocard hero-bg items-center flex flex-col bg-cover md:mb-4 gap-4 lg:gap-12 pt-24 pb-20 md:py-8 lg:pt-36"
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           backgroundBlendMode: "overlay",
@@ -345,17 +283,17 @@ export default function Home() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="flex flex-col items-center justify-center w-full max-w-xl px-4 backdrop-blur-sm">
+        <div className="flex flex-col items-center justify-center w-full max-w-xl px-4 backdrop-blur-xs lg:backdrop-blur-sm">
           <h1 className="text-center whitespace-nowrap text-white font-bold tracking-tight text-3xl md:text-7xl lg:text-[80px] leading-tight">
             Sua roupa, nosso cuidado
           </h1>
-          <p className="mt-4 text-center text-white text-lg md:text-2xl font-normal">
+          <p className="mt-4 mb-10 text-center text-white text-lg md:text-2xl font-normal">
             Oferecemos serviços profissionais de lavanderia com foco em
             qualidade e conveniência. Agende seu serviço hoje e experimente a
             diferença.
           </p>
           <a
-            href="https://wa.me/5567999242050"
+            href="https://wa.me/5567992412050"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 px-8 py-4 lg:mt-12 lg:mb-12 lg:px-12 lg:py-6 bg-[#23c5ed] text-white text-xl lg:text-3xl font-bold rounded-lg shadow-lg hover:bg-[#223569] hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
@@ -418,15 +356,15 @@ export default function Home() {
         }}
       >
         {/* Coluna Esquerda - Texto + Logos */}
-        <div className="flex flex-col lg:w-[45%] justify-center items-center lg:items-start lg:justify-start">
-          <p className="text-white pb-2 leading-relaxed text-xl md:text-3xl lg:text-4xl font-bold text-center md:text-center lg:text-left">
+        <div className="flex flex-col lg:w-[45%] justify-center items-center lg:items-start lg:justify-evenly">
+          <p className="text-white pb-2 leading-relaxed text-xl md:text-3xl lg:text-5xl font-bold text-center md:text-center lg:text-left">
             O melhor cuidado para suas peças
           </p>
-          <p className="text-sm lg:text-lg text-white pt-4">
+          <p className="text-sm lg:text-xl text-white pt-4">
             A Lavanderia Rio Pardo tem 5 anos de existência no mercado,
             oferecendo um <b>serviço de qualidade</b> a preços econômicos.
-            </p>
-            <p className="text-sm lg:text-lg text-white pt-4">
+          </p>
+          <p className="text-sm lg:text-xl text-white pt-4">
             Estamos aqui para <b>facilitar</b> e otimizar o tempo de nossos
             clientes no cuidado de suas peças. Temos como objetivo de
             representar a simplicidade realçando a essência da marca, além de
@@ -434,13 +372,13 @@ export default function Home() {
             marca.
           </p>
 
-          <p className="text-sm lg:text-lg text-white pt-4">
+          <p className="text-sm lg:text-xl text-white pt-4">
             {" "}
             Nossa equipe de especialistas está pronta para oferecer um{" "}
             <b>atendimento personalizado</b> a preços econômicos.
           </p>
 
-          <p className="text-sm lg:text-lg text-white pt-2">
+          <p className="text-sm lg:text-xl text-white pt-2">
             Nossa missão é otimizar seu tempo e garantir a manutenção da
             qualidade e higiene das suas peças.{" "}
             <b>Conte com a Lavanderia Rio Pardo!</b>{" "}
@@ -449,7 +387,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <Link
               href="/quemsomos"
-              className="flex hover:bg-[#223569] hover:text-white rounded-full p-2 text-bold mt-6 text-white gap-1 hover:underline transition-colors duration-300"
+              className="flex hover:bg-[#223569] hover:text-white lg:text-xl rounded-full p-2 text-bold mt-6 text-white gap-1 hover:underline transition-colors duration-300"
             >
               Veja mais
               <svg
@@ -471,7 +409,7 @@ export default function Home() {
         </div>
 
         {/* Coluna Direita - Imagem da fachada*/}
-        <div className="rounded-xl flex justify-center lg:w-[50%] lg:h-[50%] items-center">
+        <div className="rounded-xl flex justify-center lg:w-[55%] lg:h-full items-center">
           <img
             src="/idv-portal/fachada-loja.png"
             alt="Fachada"
@@ -483,15 +421,15 @@ export default function Home() {
       {/* Flexbox2 - Nossos serviços */}
       <div
         ref={flexboxRef3}
-        className="flex flex-col gap-8 w-full p-4  md:min-h-fit"
+        className="flex flex-col w-full p-4 lg:p-10 md:min-h-fit"
         style={{ backgroundColor: "#f1fbff" }}
       >
         {/* Título */}
-        <div className="text-center lg:text-left">
-          <h2 className="text-gray-800 lg:text-4xl md:text-3xl text-3xl font-bold">
+        <div className="text-center lg:text-center">
+          <h2 className="text-[#011F4B] lg:text-5xl md:text-3xl text-3xl font-bold">
             Nossos Serviços
           </h2>
-          <p className="text-lg text-gray-600 mt-2">
+          <p className="text-lg text-[#011F4B] mt-2">
             Qualidade e profissionalismo em cada peça
           </p>
         </div>
@@ -503,70 +441,40 @@ export default function Home() {
               {serviceCards.map((card, idx) => (
                 <div key={idx} className="embla__slide flex-[0_0_100%] px-2">
                   <div
-                    className="rounded-3xl p-4 md:p-8 flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 min-h-[400px]"
+                    className="rounded-3xl p-4 md:p-8 flex flex-col lg:flex-row items-center lg:items-start gap-4 md:gap-8 min-h-[400px] lg:h-full"
                     style={{ backgroundColor: "#f1fbff" }}
                   >
                     {/* Lado esquerdo - Imagem */}
-                    {card.title === "Retirada do Material" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
-                        <img
-                          src="/bg/entrega.png"
-                          alt="Carro de entrega"
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-                      </div>
-                    ) : card.title === "Peças que Lavamos" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
-                        <img
-                          src="/bg/cama-mesa.jpg"
-                          alt="Peças que Lavamos"
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-                      </div>
-                    ) : card.title === "Higienização de EPIs" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
-                        <img
-                          src="/bg/epis.png"
-                          alt="EPIs e Higienização"
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-                      </div>
-                    ) : card.title === "Uniformes Industriais" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
-                        <img
-                          src="/bg/uniformes.png"
-                          alt="Uniformes Industriais"
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-                      </div>
-                    ) : card.title ===
-                      "Pacotes para Hotelaria e Alojamentos" ? (
-                      <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
-                        <img
-                          src="/bg/cama-mesa.jpg"
-                          alt="Pacotes para Hotelaria e Alojamentos"
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-                      </div>
-                    ) : (
-                      <div
-                        className={`w-full lg:w-80 h-64 lg:h-80 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center`}
-                      >
-                        {card.image}
-                      </div>
-                    )}
-
+                    <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
+                      <img
+                        src={card.image.src}
+                        alt={card.image.alt}
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    </div>
                     {/* Lado direito - Conteúdo */}
-                    <div className="flex-1 text-center lg:text-left flex flex-col justify-between h-64 lg:h-80">
-                      <div className="flex flex-col justify-between h-full">
-                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">
+                    <div className="flex-1 lg:h-80 flex flex-col justify-between h-64">
+                      <div className="flex flex-col h-full justify-evenly">
+                        <h3 className="text-2xl lg:text-left text-center lg:text-3xl font-bold text-gray-900">
                           {card.title}
                         </h3>
 
-                        <div className="flex-1 flex flex-col justify-center">
-                          <div className="text-gray-600 text-sm md:text-lg leading-relaxed">
-                            {card.description}
-                          </div>
+                        <div className="text-gray-600 text-sm md:text-lg lg:text-xl leading-relaxed">
+                          {card.description}
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                          {card.pills.map((pill, pillIdx) => (
+                            <div
+                              key={pillIdx}
+                              className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md"
+                            >
+                              {pill.icon}
+                              <span className="text-gray-700 font-medium text-xs md:text-base lg:text-xl">
+                                {pill.text}
+                              </span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -577,11 +485,11 @@ export default function Home() {
           </div>
 
           {/* Indicadores de navegação */}
-          <div className="flex justify-center mt-0 space-x-3">
+          <div className="flex justify-center mt-2 lg:mt-0 space-x-2 md:space-x-3">
             {serviceCards.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 md:w-2 md:h-2 rounded-full transition-all duration-300 ${
                   index === selectedIndex
                     ? "bg-[#23c5ed] scale-125"
                     : "bg-gray-300 hover:bg-gray-400"
@@ -593,10 +501,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center lg:mt-4">
           <Link
             href="/servicos"
-            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 text-[#23c5ed] gap-1 hover:underline"
+            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 text-[#23c5ed] lg:text-xl gap-1 hover:underline"
           >
             Veja mais
             <svg
@@ -627,7 +535,7 @@ export default function Home() {
         }}
       >
         <div className="flexbox-left md:flex-col lg:flex-row items-start gap-4 lg:w-[50%] text-white">
-          <p className="font-bold opacity-100 lg:text-4xl md:text-3xl text-3xl  text-center md:text-center lg:text-left">
+          <p className="font-bold opacity-100 lg:text-5xl md:text-3xl text-3xl  text-center md:text-center lg:text-left">
             Venha nos visitar
           </p>
           <p className=" text-lg text-center md:text-center lg:text-left">
@@ -700,7 +608,7 @@ export default function Home() {
             />
             <a href={`https://wa.me/${phoneNumber}`}>
               <span className="text-[#011F4B] text-2xl cursor-pointer hover:text-[#223569]">
-                (067) 99924-2050
+                (067) 99241-2050
               </span>
             </a>
           </div>
