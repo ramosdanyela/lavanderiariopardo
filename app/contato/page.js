@@ -182,7 +182,7 @@ export default function Contato() {
                 </h3>
                 <div className="mt-2 space-y-1 text-lg lg:text-xl text-gray-600">
                   <p>
-                    Rua Projetada, Quadra 01
+                    Rua Projetada A, Quadra 01
                     <br />
                     Lote 07 - Núcleo Industrial
                     <br />

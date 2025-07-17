@@ -585,7 +585,7 @@ export default function Home() {
                 Nosso endereço
               </h3>
               <address className="flex-col mt-2 space-y-1 items-center text-center text-md md:text-xl lg:text-2xl not-italic text-gray-600">
-                <p>Rua Projetada, Quadra 01 </p>
+                <p>Rua Projetada A, Quadra 01 </p>
                 <p>
                   <span className="whitespace-nowrap">
                     Lote 07 - Núcleo Industrial
