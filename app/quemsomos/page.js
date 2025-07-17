@@ -47,7 +47,7 @@ export default function QuemSomos() {
             stagger: 0.2,
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 80%",
+              start: "top 95%", // Mudança: agora ativa quando o topo do elemento está a 95% da viewport (5% de scroll)
               end: "top 90%",
               toggleActions: "play none none none",
             },
@@ -107,7 +107,7 @@ export default function QuemSomos() {
         <div className="flex px-4 h-[500px] lg:px-8 lg:w-[45%]">
           <img
             alt="Product screenshot"
-            src="/idv-portal/fachada-loja.png"
+            src="/idv-lavanderia/fachada-loja.png"
             className="w-full h-full object-cover object-top transform  rounded-2xl shadow-2xl"
           />
         </div>

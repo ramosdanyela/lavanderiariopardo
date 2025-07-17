@@ -17,7 +17,7 @@ const NavbarMobile = () => {
       <div className="flex justify-center">
         <Link href="/">
           <img
-            src="/idv-portal/logo.png"
+            src="/idv-lavanderia/logo.png"
             alt="Logo"
             className="w-36 h-16 object-contain cursor-pointer"
           />

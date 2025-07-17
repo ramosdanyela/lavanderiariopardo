@@ -37,6 +37,14 @@ export default function Home() {
   const [expandedFeature, setExpandedFeature] = useState(null);
 
   useEffect(() => {
+    // Verificar se é dispositivo móvel
+    const isMobile = window.innerWidth < 768;
+
+    // Se for mobile, não aplicar animações
+    if (isMobile) {
+      return;
+    }
+
     const animateSection = (ref) => {
       if (ref.current) {
         gsap.fromTo(
@@ -220,7 +228,7 @@ export default function Home() {
           icon: (
             <FaSocks className="text-[#23c5ed] w-4 h-4 md:w-5 md:h-5 mr-2" />
           ),
-          text: "Meias e Roupas Íntimas",
+          text: "Roupas Íntimas",
         },
         {
           icon: (
@@ -411,7 +419,7 @@ export default function Home() {
         {/* Coluna Direita - Imagem da fachada*/}
         <div className="rounded-xl flex justify-center lg:w-[55%] lg:h-full items-center">
           <img
-            src="/idv-portal/fachada-loja.png"
+            src="/idv-lavanderia/fachada-loja.png"
             alt="Fachada"
             className="w-full h-full bg-cover rounded-xl"
           />
@@ -429,7 +437,7 @@ export default function Home() {
           <h2 className="text-[#011F4B] lg:text-5xl md:text-3xl text-3xl font-bold">
             Nossos Serviços
           </h2>
-          <p className="text-lg text-[#011F4B] mt-2">
+          <p className="text-md text-[#011F4B] mt-2 mb-6">
             Qualidade e profissionalismo em cada peça
           </p>
         </div>
@@ -445,29 +453,33 @@ export default function Home() {
                     style={{ backgroundColor: "#f1fbff" }}
                   >
                     {/* Lado esquerdo - Imagem */}
-                    <div className="w-full lg:w-80 h-64 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
+                    <div className="w-full lg:w-80 h-40 lg:h-80 rounded-2xl overflow-hidden flex items-center justify-center p-0 m-0">
                       <img
                         src={card.image.src}
                         alt={card.image.alt}
-                        className="w-full h-full object-cover rounded-2xl"
+                        className={`w-full h-full object-cover rounded-2xl ${
+                          card.image.src === "/bg/entrega.png"
+                            ? "object-[center_30%]"
+                            : "object-center"
+                        }`}
                       />
                     </div>
                     {/* Lado direito - Conteúdo */}
                     <div className="flex-1 lg:h-80 flex flex-col justify-between h-64">
                       <div className="flex flex-col h-full justify-evenly">
-                        <h3 className="text-2xl lg:text-left text-center lg:text-3xl font-bold text-gray-900">
+                        <h3 className="text-xl lg:text-left text-center lg:text-3xl font-bold text-gray-900">
                           {card.title}
                         </h3>
 
-                        <div className="text-gray-600 text-sm md:text-lg lg:text-xl leading-relaxed">
+                        <div className="text-gray-600 text-sm md:text-lg lg:text-xl text-center p-2 lg:p-0 lg:text-left leading-relaxed md:leading-relaxed">
                           {card.description}
                         </div>
 
-                        <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <div className="flex flex-wrap gap-2 md:gap-4 justify-center lg:justify-start">
                           {card.pills.map((pill, pillIdx) => (
                             <div
                               key={pillIdx}
-                              className="flex items-center bg-white px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-md"
+                              className="flex items-center bg-white px-2 py-1 md:px-4 md:py-2 rounded-full shadow-md"
                             >
                               {pill.icon}
                               <span className="text-gray-700 font-medium text-xs md:text-base lg:text-xl">
@@ -504,7 +516,7 @@ export default function Home() {
         <div className="flex flex-col items-center lg:mt-4">
           <Link
             href="/servicos"
-            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 text-[#23c5ed] lg:text-xl gap-1 hover:underline"
+            className="flex hover:bg-[#223569] hover:text-white rounded-full p-1 text-bold mt-0 text-[#23c5ed] text-sm lg:text-xl gap-1 hover:underline"
           >
             Veja mais
             <svg
@@ -528,7 +540,11 @@ export default function Home() {
       {/* Venha nos visitar */}
       <div
         ref={flexboxRef4}
-        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 opacity-0 translate-y-10 min-h-screen md:min-h-fit"
+        className={`flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 min-h-screen md:min-h-fit ${
+          window.innerWidth < 768
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
         style={{
           backgroundImage:
             "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",

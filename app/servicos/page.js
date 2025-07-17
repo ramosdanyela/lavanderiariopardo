@@ -218,27 +218,30 @@ export default function Servicos() {
 
         <div ref={servicesRef} className="space-y-16 opacity-0">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="flex flex-col lg:flex-row">
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden"
+            >
+              <div className="flex flex-col lg:flex-row  items-center">
                 {/* Imagem */}
-                <div className="lg:w-1/3 h-64 lg:h-auto">
+                <div className="lg:w-1/4 h-64 lg:h-80">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Conteúdo */}
-                <div className="lg:w-2/3 p-8">
+                <div className="flex flex-col justify-center lg:w-2/3 p-8 lg:p-12 lg:h-80">
                   <div className="flex items-center mb-6">
                     {service.icon}
-                    <h2 className="ml-4 text-2xl font-semibold text-gray-900">
+                    <h2 className="ml-4 text-2xl lg:text-3xl font-semibold text-gray-900">
                       {service.title}
                     </h2>
                   </div>
 
-                  <div className="text-gray-600 leading-relaxed">
+                  <div className="text-gray-600 lg:text-lg leading-relaxed">
                     {service.description}
                   </div>
                 </div>

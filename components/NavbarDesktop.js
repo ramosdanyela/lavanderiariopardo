@@ -15,7 +15,7 @@ const NavbarDesktop = () => {
       <div className="flex">
         <Link href="/">
           <img
-            src="/idv-portal/logo.png"
+            src="/idv-lavanderia/logo.png"
             alt="Logo"
             className="w-45 h-20 object-cover cursor-pointer"
           />

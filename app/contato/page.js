@@ -85,10 +85,10 @@ export default function Contato() {
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
               <div className="rounded-2xl bg-gray-50 p-10 text-center md:text-center lg:text-left">
-                <h3 className="text-base/7  font-semibold text-gray-900">
+                <h3 className="text-base/7 lg:text-lg/8 font-semibold text-gray-900">
                   Contato Comercial
                 </h3>
-                <dl className="mt-3 space-y-1 text-sm/6 text-gray-600">
+                <dl className="mt-3 space-y-1 text-sm/6 lg:text-base/6 text-gray-600">
                   <div>
                     <dt className="sr-only">Email</dt>
                     <dd>
@@ -108,13 +108,13 @@ export default function Contato() {
                         alt="WhatsApp"
                         className="w-5 h-5"
                       />
-                      <span>(67) 99924-2050</span>
+                      <span>(67) 99241-2050</span>
                     </dd>
                   </div>
                 </dl>
               </div>
               <div className="rounded-2xl bg-gray-50 p-10 text-center md:text-center lg:text-left">
-                <h3 className="text-base/7 font-semibold text-gray-900">
+                <h3 className="text-base/7 lg:text-lg/7 font-semibold text-gray-900">
                   Acompanhe nossas Redes Sociais
                 </h3>
                 <div className="mt-2 flex flex-col  space-y-2 justify-center gap-x-10">
@@ -122,7 +122,7 @@ export default function Contato() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="text-gray-600 flex flex-row justify-center md:justify-center lg:justify-start hover:text-gray-800"
+                      className="text-gray-600 flex flex-row justify-center md:justify-center lg:justify-start hover:text-gray-800 lg:text-base"
                     >
                       <item.icon aria-hidden="true" className="size-6" />
                       <span className="font-normal">{item.name}</span>
@@ -147,19 +147,19 @@ export default function Contato() {
             </div>
             <div className="flex-row gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
               <div className="rounded-2xl bg-gray-50 p-10">
-                <h3 className="text-base/7 font-semibold text-gray-900">
+                <h3 className="text-base/7 lg:text-lg/7 font-semibold text-gray-900">
                   Horário de Funcionamento
                 </h3>
-                <address className="mt-3 space-y-1 text-sm/6 not-italic text-gray-600">
+                <address className="mt-3 space-y-1 text-sm/6 lg:text-base/6 not-italic text-gray-600">
                   <p>Segunda à Sexta 07:30 - 18:00</p>
                   <p>Sábado 08:00 - 12:00</p>
                 </address>
               </div>
               <div className="rounded-2xl mt-8 bg-gray-50 p-10">
-                <h3 className="text-base/7 font-semibold text-gray-900">
+                <h3 className="text-base/7 lg:text-lg/7 font-semibold text-gray-900">
                   Maps
                 </h3>
-                <address className="mt-3 space-y-1 text-sm/6 not-italic text-gray-600">
+                <address className="mt-3 space-y-1 text-sm/6 lg:text-base/6 not-italic text-gray-600">
                   <p>
                     Rua Projetada, Quadra 01
                     <br />

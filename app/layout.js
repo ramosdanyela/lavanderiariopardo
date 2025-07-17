@@ -37,8 +37,9 @@ export default function RootLayout({ children }) {
           {children}
 
           <Footer />
-          
         </div>
+
+        <WhatsAppBtn />
       </body>
     </html>
   );
