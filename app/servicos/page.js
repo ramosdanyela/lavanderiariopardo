@@ -206,8 +206,8 @@ export default function Servicos() {
 
   return (
     <div className="min-h-screen bg-[#f9fcfd]">
-      <div className="max-w-7xl mx-auto mt-20 px-4 py-16 sm:px-6 lg:px-8">
-        <div ref={sectionRef} className="text-center mb-16 opacity-0">
+      <div className="max-w-7xl mx-auto px-4 pt-24 md:pt-32 lg:pt-40 pb-8 sm:px-6 lg:px-8">
+        <div ref={sectionRef} className="text-center mb-8 lg:mb-16 opacity-0">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4">
             Nossos Serviços
           </h1>
@@ -233,10 +233,10 @@ export default function Servicos() {
                 </div>
 
                 {/* Conteúdo */}
-                <div className="flex flex-col justify-center lg:w-2/3 p-8 lg:p-12 lg:h-80">
-                  <div className="flex items-center mb-6">
-                    {service.icon}
-                    <h2 className="ml-4 text-2xl lg:text-3xl font-semibold text-gray-900">
+                <div className="flex flex-col justify-center items-center text-center lg:text-left lg:items-start lg:w-2/3 p-8 lg:p-12 lg:h-80">
+                  <div className="flex items-center justify-center lg:justify-start text-center lg:text-left mb-6">
+                    <div className="hidden lg:block">{service.icon}</div>
+                    <h2 className="text-2xl lg:text-3xl font-semibold text-gray-900 lg:ml-4">
                       {service.title}
                     </h2>
                   </div>

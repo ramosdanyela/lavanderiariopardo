@@ -37,13 +37,11 @@ export default function Home() {
   const [expandedFeature, setExpandedFeature] = useState(null);
 
   useEffect(() => {
-    // Verificar se é dispositivo móvel
-    const isMobile = window.innerWidth < 768;
-
-    // Se for mobile, não aplicar animações
-    if (isMobile) {
-      return;
-    }
+    // Remover a verificação de dispositivo móvel para permitir que o carrossel funcione
+    // const isMobile = window.innerWidth < 768;
+    // if (isMobile) {
+    //   return;
+    // }
 
     const animateSection = (ref) => {
       if (ref.current) {
@@ -437,7 +435,7 @@ export default function Home() {
           <h2 className="text-[#011F4B] lg:text-5xl md:text-3xl text-3xl font-bold">
             Nossos Serviços
           </h2>
-          <p className="text-md text-[#011F4B] mt-2 mb-6">
+          <p className="text-md lg:text-lg text-[#011F4B] mt-2 mb-6">
             Qualidade e profissionalismo em cada peça
           </p>
         </div>
@@ -540,11 +538,7 @@ export default function Home() {
       {/* Venha nos visitar */}
       <div
         ref={flexboxRef4}
-        className={`flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 min-h-screen md:min-h-fit ${
-          window.innerWidth < 768
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        }`}
+        className="flex flex-col md:flex-col lg:flex-row lg:justify-between gap-4 p-8 min-h-screen md:min-h-fit"
         style={{
           backgroundImage:
             "linear-gradient(135deg, #23c5ed 0%, #1ba3c2 50%, #011F4B 100%)",

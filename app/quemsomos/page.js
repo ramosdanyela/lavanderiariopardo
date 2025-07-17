@@ -75,7 +75,7 @@ export default function QuemSomos() {
     <div className="flex flex-col bg-[#f9fcfd]">
       <div
         ref={flexboxRef1}
-        className="container-hero flex flex-col md:flex-row pt-8 md:pt-[8rem] lg:pt-[10rem] lg:flex-row"
+        className="container-hero flex flex-col md:flex-row pt-24 md:pt-[8rem] lg:pt-[10rem] lg:flex-row"
       >
         {/* Coluna da Esquerda - Descrição */}
         <div className="flex flex-col px-4 md:px-8  w-full  lg:w-[55%]">
