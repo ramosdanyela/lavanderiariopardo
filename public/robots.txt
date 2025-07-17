@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lavanderiariopardo.com.br
+
+# Sitemaps
+Sitemap: https://lavanderiariopardo.com.br/sitemap.xml
