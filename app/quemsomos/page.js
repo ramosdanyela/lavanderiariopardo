@@ -72,6 +72,13 @@ export default function QuemSomos() {
   }, []);
 
   return (
+    <>
+    <Head>
+    <title>Lavanderia Rio Pardo</title>
+    <meta name="description" content="Lavanderia industrial em Ribas do Rio Pardo." />
+    <link rel="canonical" href="https://lavanderiariopardo.com.br/quemsomos" />
+  </Head> 
+  <main>
     <div className="flex flex-col bg-[#f9fcfd]">
       <div
         ref={flexboxRef1}
@@ -216,6 +223,7 @@ export default function QuemSomos() {
           </div>
         </div>
       </div>
-    </div>
+    </div></main>
+    </>
   );
 }

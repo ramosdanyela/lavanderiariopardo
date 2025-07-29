@@ -205,6 +205,13 @@ export default function Servicos() {
   ];
 
   return (
+    <>
+    <Head>
+    <title>Lavanderia Rio Pardo</title>
+    <meta name="description" content="Lavanderia industrial em Ribas do Rio Pardo." />
+    <link rel="canonical" href="https://lavanderiariopardo.com.br/servicos" />
+  </Head>
+  <main>
     <div className="min-h-screen bg-[#f9fcfd]">
       <div className="max-w-7xl mx-auto px-4 pt-24 md:pt-32 lg:pt-40 pb-8 sm:px-6 lg:px-8">
         <div ref={sectionRef} className="text-center mb-8 lg:mb-16 opacity-0">
@@ -250,6 +257,7 @@ export default function Servicos() {
           ))}
         </div>
       </div>
-    </div>
+    </div></main>
+    </>
   );
 }

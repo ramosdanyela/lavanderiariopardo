@@ -85,6 +85,13 @@ export default function Contato() {
   }, []);
 
   return (
+    <>
+    <Head>
+    <title>Lavanderia Rio Pardo</title>
+    <meta name="description" content="Lavanderia industrial em Ribas do Rio Pardo." />
+    <link rel="canonical" href="https://lavanderiariopardo.com.br/contato" />
+  </Head> 
+  <main>
     <div className="bg-white pt-24 md:pt-32 lg:pt-40">
       <div
         ref={flexboxRef1}
@@ -197,6 +204,7 @@ export default function Contato() {
           </div>
         </div>
       </div>
-    </div>
+    </div></main>
+    </>
   );
 }
