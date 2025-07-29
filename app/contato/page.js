@@ -11,7 +11,7 @@ const navigation = {
   social: [
     {
       name: "Facebook",
-      href: "https://www.facebook.com/share/1Cmf69Spsd/",
+      href: "https://www.facebook.com/p/Lavanderia-Rio-Pardo-100063914348836/",
       icon: (props) => (
         <svg fill="#1877F2" viewBox="0 0 24 24" {...props}>
           <path
